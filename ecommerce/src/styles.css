@@ -1,0 +1,70 @@
+.bm-burger-button {
+    position: relative;
+    margin-top: 10px;
+    }
+  .bm-burger-button-hover {
+    background: palevioletred;
+  }
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+    margin-top: 30px;
+    position: relative;
+  }
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+  }
+  .bm-menu {
+
+    background: #373a47;
+    padding: 2em  0; 
+    font-size: 1.15em;
+    margin-top: 25px;
+    
+  }
+  .bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+  }
+  
+  /* Individual item */
+  .bm-item {
+    display: inline-block;
+
+    /* Our sidebar item styling */
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: #d1d1d1;
+    transition: color 0.2s;
+  }
+  
+  /* Styling of overlay */
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .bm-item:hover {
+    color: pink;
+  }
+  .bm-burger-bars {
+    background: #373a47;
+  }
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  
+  .row{
+    display: flex;
+  }
+  #header-grid{
+    padding-right: 0px;
+  }
+  .ui.card > .content{
+  padding: 0px;
+}
+ .ui.secondary.menu a.item:hover {
+  background: pink;
+  color: black;
+}
+
+  
