@@ -6,7 +6,7 @@ import MainMenu from "./MainMenu";
 const Header=()=>{
   
     return(
-        <div className='ui divided three column grid' id="header-grid">
+        <div className='ui three column grid' id="header-grid">
       <div className='ui segment row'>
       <div className='left floated one wide column'>
       <BurgerMenu />

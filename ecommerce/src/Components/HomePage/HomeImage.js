@@ -2,28 +2,26 @@ import React from "react";
 import 'semantic-ui-css/semantic.min.css'
 
 import Carousel from "semantic-ui-carousel-react";
-import sale from "../../images/sale.jpg"
-import shopping from "../../images/shopping.jpg"
-import woman from "../../images/woman.jpg"
+
 const HomeImage = () => {
  
   let elements = [
     {
       render: () => {
         return (
-          <img className="ui image fluid" src={sale}/>
+          <img className="ui image fluid" src="images/sale.jpg"/>
         );
       }
     },
     {
       render: () => {
-        return <img className="ui image fluid" src={shopping} />;
+        return <img className="ui image fluid" src="images/shopping.jpg" />;
       }
     },
     {
       render: () => {
         return (
-          <img className="ui image fluid" src={woman} />
+          <img className="ui image fluid" src="images/electronics2.jpg" />
         );
       }
     }

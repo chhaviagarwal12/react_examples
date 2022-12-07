@@ -8,15 +8,22 @@ import Users from './Routes/Users'
 import Orders from './Routes/Orders'
 import Contact from './Routes/Contact'
 import HomeImage from './HomePage/HomeImage'
+import { useState } from 'react'
+import SingleCategory from './Routes/SingleCategory'
 
 const Navigation=()=>{
+    const [selectedCategory,setSelectedCategory]=useState("")
+  const setCategoryCallback=(category)=>{
+      setSelectedCategory(category)
+    }
+   
+    console.log("from navigation component",selectedCategory)
     return(
-      
-            
-        <div>
+                  <div>
             <Routes>
              <Route path="/" element={<HomeImage/>}/>   
-            <Route path="/products"  element={<Products/>}></Route>
+            <Route path="/products"  element={<Products returnCategory={setCategoryCallback}/>}></Route>
+            <Route path={`/${selectedCategory}`}  element={<SingleCategory/>}></Route>
             <Route path="/search"  element={<Search/>}></Route>
             <Route path="/wishlist"  element={<Wishlist/>}></Route>
             <Route path="/cart"  element={<Cart/>}></Route>

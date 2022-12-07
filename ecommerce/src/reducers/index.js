@@ -1,7 +1,13 @@
 import { combineReducers } from "redux";
-import fakeStore from "./fakeStoreReducer";
+import singleProduct from "./singleProductReducer";
+import allProducts from "./allProductsReducer"
+import allCategories from "./allCategoriesReducer"
+import singleCategory from "./singleCategoryReducer"
 
 
 export default combineReducers({
-    getRequest:fakeStore,
+    allCategories:allCategories,
+    singleCategory:singleCategory,
+    allProducts:allProducts,
+    singleProduct:singleProduct
 })
