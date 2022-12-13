@@ -1,3 +1,5 @@
+
+/*======styling of burger menu=======*/
 .bm-burger-button {
     position: relative;
     margin-top: 10px;
@@ -66,5 +68,10 @@
   background: pink;
   color: black;
 }
-
-  
+/*===styling of ui cards=========*/
+.ui.card{
+  max-width: 100%; 
+  height: 450px;
+  margin-bottom: 100px;
+ 
+}

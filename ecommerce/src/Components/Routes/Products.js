@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getAllCategories,getSingleCategory } from "../../actions";
 import { Link } from "react-router-dom";
-
+// import '../../styles.css'
 
 const Products=(props)=>{
 
@@ -20,11 +20,11 @@ const Products=(props)=>{
                    
                            <div className="ui eight wide column" key={category}>
                              <Link to={`/${category}`}>
-                    <div className="ui fluid pink card"  onClick={()=>{
+                    <div className="ui  pink card"  onClick={()=>{
                     props.returnCategory(category) //this function is changing url
                         props.getSingleCategory(category)}
                     }>
-                    <div className="ui fluid image">
+                    <div className="ui  image">
                                             <img src={`images/${category}.jpg`} alt={`${category}`}/>   
                                             <div className="content">
                                                 <div className="header">
