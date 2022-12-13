@@ -23,7 +23,7 @@ const Navigation=()=>{
             <Routes>
              <Route path="/" element={<HomeImage/>}/>   
             <Route path="/products"  element={<Products returnCategory={setCategoryCallback}/>}></Route>
-            <Route path={`/${selectedCategory}`}  element={<SingleCategory/>}></Route>
+            <Route path={`/${selectedCategory}`}  element={<SingleCategory selectedCategory={selectedCategory}/>}></Route>
             <Route path="/search"  element={<Search/>}></Route>
             <Route path="/wishlist"  element={<Wishlist/>}></Route>
             <Route path="/cart"  element={<Cart/>}></Route>

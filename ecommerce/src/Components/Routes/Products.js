@@ -8,7 +8,6 @@ const Products=(props)=>{
 
     useEffect(()=>{
         props.getAllCategories()
-        
     },[])
   
   
@@ -21,8 +20,8 @@ const Products=(props)=>{
                    
                            <div className="ui eight wide column" key={category}>
                              <Link to={`/${category}`}>
-                    <div className="ui pink card"  onClick={()=>{
-                       (props.returnCategory(category)) 
+                    <div className="ui fluid pink card"  onClick={()=>{
+                    props.returnCategory(category) //this function is changing url
                         props.getSingleCategory(category)}
                     }>
                     <div className="ui fluid image">
@@ -55,10 +54,9 @@ const Products=(props)=>{
 
 const mapStateToProps=(state)=>{
 return{
-    allCategories:state.allCategories
+    allCategories:state.allCategories,
+    
 }
 }
-
-
 
 export default connect(mapStateToProps,{getAllCategories,getSingleCategory})(Products)

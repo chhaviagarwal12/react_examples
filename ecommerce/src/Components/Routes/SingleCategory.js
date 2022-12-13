@@ -3,35 +3,47 @@ import { connect } from "react-redux";
 import { getSingleCategory } from "../../actions";
 
 const SingleCategory=(props)=>{
+   
 
-    // const renderedList=()=>{
-    //     if( props.allCategories.categories){
-    //         return props.allCategories.categories.map((category)=>{
-    //             return(
-    //              <div className="ui eight wide column">
-    //                 <div className="ui pink card" key={category} onClick={()=>{
-    //                     returnCategory(category)
-    //                     getSingleCategory(category)
-    //                 }
-    //             }>
-    //                 <div className="ui fluid image">
-    //                                         <img src={`images/${category}.jpg`} alt={`${category}`}/>   
-    //                                         <div className="content">
-    //                                             <div className="header">
-    //                                              {category.toUpperCase()}
-    //                                             </div>
-    //                                             </div>                               
-    //                             </div>
-    //                 </div>
-    //              </div>       
-    //             )
-    //        })
-    //     }
-    // }
+    const renderedList=()=>{
+        if( props.singleCategory){
+            return props.singleCategory.map((product)=>{
+                return(
+                 <div className="ui five wide column">
+                    <div className="ui three raised pink card">
+                        <div className="card">
+                        <div className="ui fluid image">
+                        <img src={product.image} alt={`${product.title}`}/>   
+                            <div className="content">
+                                <div className="header">
+                                    {product.title.toUpperCase()}
+                                    </div>
+                                    <div className="extra content">
+                                        <span>Price:&#x20b9;
+                                        {product.price}</span>
+            
+                                    </div>
+                                    <div className="extra">
+                                      Rating:  <div class="ui star rating" data-rating={`${Math.round(product.rating.rate)}`}>{product.rating.rate}</div> 
+                                    </div>
+                                  
+                                    </div>                               
+                                </div>
+                        </div>
+                    
+                    </div>
+                 </div>       
+                )
+           })
+        }
+    }
     return(
        
-        <div>
-
+        <div className="ui relaxed  grid">
+        <div className="row">
+             {renderedList()}
+                       </div>
+       
         </div>
       )
 

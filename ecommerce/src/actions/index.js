@@ -30,10 +30,12 @@ export const getAllCategories=()=>async dispatch=>{
 export const getSingleCategory=(category)=>async dispatch=>{
     console.log("action creator clicked",category)
     const response=await fakeStore.get(`/products/category/${category}`)
-    return{
+    dispatch({
         type:'SINGLE_CATEGORY',
         payload:response.data
-    }
+    })
+       
+    
 }
 //for getting cart details
 export const getCartDetails=(userId)=>async dispatch=>{

@@ -6,15 +6,15 @@ const BurgerMenu=()=>{
   const [open,setOpen]=useState(false)
     const ref=useRef()
  
-    useEffect(()=>{
-        window.addEventListener("click",(event)=>{
-            if(ref.current.contains(event.target)){
-                return;
-            }
-            console.log(ref.current)
-            setOpen(false)
-     })
-    },[])
+    // useEffect(()=>{
+    //     window.addEventListener("click",(event)=>{
+    //         if(ref.current.contains(event.target)){
+    //             return;
+    //         }
+    //         console.log(ref.current)
+    //         setOpen(false)
+    //  })
+    // },[])
  
 return(
     <div ref={ref}>
