@@ -68,10 +68,64 @@
   background: pink;
   color: black;
 }
-/*===styling of ui cards=========*/
-.ui.card{
-  max-width: 100%; 
+/*===styling of products component ui cards=========*/
+#products-card{
+  width: 85%; 
   height: 450px;
-  margin-bottom: 100px;
+ margin-top: 20px;
  
 }
+#products-image {
+ display: contents;
+}
+
+#categories-image{
+ 
+  height: 384px;
+  width: 290px;
+}
+
+#products-header{
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  font-size: large;
+}
+
+.main-header{
+  text-align: center;
+}
+/* styling of single category ui cards */
+#category-card{
+  width: 30%; 
+  height: 500px;
+ margin: 20px 100px 50px 100px;
+ 
+ 
+}
+#category-image {
+ display: contents;
+}
+
+#product-image{
+  justify-content: center;
+  height: 300px;
+  /* width: 100%; */
+}
+
+#category-header{
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  font-size: large;
+}
+.extra {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  font-size: large;
+}
+

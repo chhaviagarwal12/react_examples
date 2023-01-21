@@ -1,0 +1,2 @@
+2023-01-10 18:21:33.277 [info] [perf] Render performance baseline is 82ms
+2023-01-10 18:21:33.838 [error] [File Watcher (universal)] restarting watcher after error: terminated by itself with code 3221225477, signal: undefined

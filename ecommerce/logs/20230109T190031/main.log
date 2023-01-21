@@ -1,0 +1,10 @@
+2023-01-09 19:00:31.771 [info] update#setState idle
+2023-01-09 19:00:33.146 [info] Starting extension host with pid 22444 (fork() took 14 ms).
+2023-01-09 19:01:01.784 [info] update#setState checking for updates
+2023-01-09 19:01:02.415 [info] update#setState idle
+2023-01-09 20:01:01.795 [info] update#setState checking for updates
+2023-01-09 20:01:02.126 [info] update#setState idle
+2023-01-09 21:30:05.690 [info] update#setState checking for updates
+2023-01-09 21:30:06.561 [info] update#setState idle
+2023-01-09 22:29:25.723 [info] Waiting for extension host with pid 22444 to exit.
+2023-01-09 22:29:26.204 [info] Extension host with pid 22444 exited with code: 0, signal: null.

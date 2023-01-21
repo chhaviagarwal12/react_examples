@@ -1,0 +1,38 @@
+2023-01-09 19:00:45.573 [error] net::ERR_NAME_NOT_RESOLVED: Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:105:7047)
+    at SimpleURLLoaderWrapper.emit (node:events:526:28)
+2023-01-09 19:25:51.125 [error] Error: File not found
+    at p.Yb (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2467:87765)
+    at async p.setInput (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2467:87103)
+    at async n.H (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:5097)
+    at async n.y (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:3926)
+    at async n.openEditor (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:3041)
+    at async vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2676:13468
+2023-01-09 19:27:18.046 [error] Error: File not found
+    at p.Yb (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2467:87765)
+    at async p.setInput (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2467:87103)
+    at async n.H (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:5097)
+    at async n.y (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:3926)
+    at async n.openEditor (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:3041)
+    at async vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2676:13468
+2023-01-09 19:27:23.283 [error] Error: File not found
+    at p.Yb (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2467:87765)
+    at async p.setInput (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2467:87103)
+    at async n.H (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:5097)
+    at async n.y (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:3926)
+    at async n.openEditor (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:3041)
+    at async vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2676:13468
+2023-01-09 19:27:30.098 [error] Error: File not found
+    at p.Yb (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2467:87765)
+    at async p.setInput (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2467:87103)
+    at async n.H (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:5097)
+    at async n.y (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:3926)
+    at async n.openEditor (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:3041)
+    at async vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2676:13468
+2023-01-09 19:27:32.049 [error] Error: File not found
+    at p.Yb (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2467:87765)
+    at async p.setInput (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2467:87103)
+    at async n.H (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:5097)
+    at async n.y (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:3926)
+    at async n.openEditor (vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2465:3041)
+    at async vscode-file://vscode-app/c:/Users/chhav/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:2676:13468

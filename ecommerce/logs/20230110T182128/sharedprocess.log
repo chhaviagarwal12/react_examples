@@ -1,0 +1,5 @@
+2023-01-10 18:21:31.440 [info] Starting worker process with pid 10992 (type: fileWatcher, window: 1).
+2023-01-10 18:21:32.093 [info] WSL is not installed, so could not detect WSL profiles
+2023-01-10 18:21:33.836 [error] SharedProcess (worker, fileWatcher): Worker process with pid 10992 terminated by itself with code 3221225477, signal: null (type: fileWatcher, window: 1)
+2023-01-10 18:21:33.858 [info] Starting worker process with pid 13876 (type: fileWatcher, window: 1).
+2023-01-10 22:00:00.612 [warning] No ptyHost heartbeat after 6 seconds

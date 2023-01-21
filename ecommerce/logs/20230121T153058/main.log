@@ -1,0 +1,10 @@
+2023-01-21 15:30:59.318 [info] update#setState idle
+2023-01-21 15:31:01.516 [info] Starting extension host with pid 20704 (fork() took 24 ms).
+2023-01-21 15:31:33.677 [info] update#setState checking for updates
+2023-01-21 15:31:38.084 [info] update#setState idle
+2023-01-21 16:31:33.715 [info] update#setState checking for updates
+2023-01-21 16:31:34.612 [info] update#setState idle
+2023-01-21 17:31:33.751 [info] update#setState checking for updates
+2023-01-21 17:31:34.356 [info] update#setState idle
+2023-01-21 18:27:26.938 [info] Waiting for extension host with pid 20704 to exit.
+2023-01-21 18:27:27.171 [info] Extension host with pid 20704 exited with code: 0, signal: null.

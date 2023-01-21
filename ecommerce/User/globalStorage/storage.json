@@ -7,11 +7,7 @@
                 "folderUri": "file:///d%3A/examples/coursera_test/react_examples/ecommerce"
             }
         ],
-        "emptyWindows": [
-            {
-                "backupFolder": "1668070394077"
-            }
-        ]
+        "emptyWindows": []
     },
     "theme": "vs-dark",
     "themeBackground": "#1e1e1e",
@@ -32,7 +28,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 256,
+            "sideBarWidth": 255,
             "statusBarHeight": 22,
             "windowBorder": false
         }
@@ -50,5 +46,6 @@
             }
         },
         "openedWindows": []
-    }
+    },
+    "windowControlHeight": 30
 }

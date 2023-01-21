@@ -1,2 +1,3 @@
-2022/11/10-14:23:13.348 20b0 Creating DB D:\examples\coursera_test\react_examples\ecommerce\Local Storage\leveldb since it was missing.
-2022/11/10-14:23:13.700 20b0 Reusing MANIFEST D:\examples\coursera_test\react_examples\ecommerce\Local Storage\leveldb/MANIFEST-000001
+2023/01/21-15:30:59.060 1054 Reusing MANIFEST D:\examples\coursera_test\react_examples\ecommerce\Local Storage\leveldb/MANIFEST-000001
+2023/01/21-15:30:59.100 1054 Recovering log #3
+2023/01/21-15:30:59.100 1054 Reusing old log D:\examples\coursera_test\react_examples\ecommerce\Local Storage\leveldb/000003.log 
