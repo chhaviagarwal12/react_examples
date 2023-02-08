@@ -12,6 +12,7 @@
     "theme": "vs-dark",
     "themeBackground": "#1e1e1e",
     "windowSplash": {
+        "zoomLevel": 0,
         "baseTheme": "vs-dark",
         "colorInfo": {
             "foreground": "#cccccc",
@@ -28,7 +29,7 @@
             "editorPartMinWidth": 220,
             "titleBarHeight": 30,
             "activityBarWidth": 48,
-            "sideBarWidth": 255,
+            "sideBarWidth": 267,
             "statusBarHeight": 22,
             "windowBorder": false
         }
@@ -47,5 +48,13 @@
         },
         "openedWindows": []
     },
-    "windowControlHeight": 30
+    "windowControlHeight": 30,
+    "userDataProfilesMigration": true,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///d%3A/examples/coursera_test/react_examples/ecommerce": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "profileAssociationsMigration": true
 }

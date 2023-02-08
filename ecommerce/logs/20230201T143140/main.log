@@ -1,0 +1,22 @@
+2023-02-01 14:31:40.778 [info] update#setState idle
+2023-02-01 14:31:42.095 [info] Starting extension host with pid 7628 (fork() took 13 ms).
+2023-02-01 14:32:10.786 [info] update#setState checking for updates
+2023-02-01 14:32:11.927 [info] update#setState idle
+2023-02-01 15:32:10.808 [info] update#setState checking for updates
+2023-02-01 15:32:11.237 [info] update#setState idle
+2023-02-01 17:15:38.882 [info] update#setState checking for updates
+2023-02-01 17:15:41.062 [info] update#setState idle
+2023-02-01 18:58:14.387 [info] update#setState checking for updates
+2023-02-01 18:58:14.550 [error] Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:105:7047)
+    at SimpleURLLoaderWrapper.emit (node:events:526:28)
+2023-02-01 18:58:14.551 [info] update#setState idle
+2023-02-01 20:32:29.702 [info] update#setState checking for updates
+2023-02-01 20:32:31.265 [info] update#setState idle
+2023-02-01 21:53:46.481 [info] update#setState checking for updates
+2023-02-01 21:53:46.786 [error] Error: net::ERR_NAME_NOT_RESOLVED
+    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:105:7047)
+    at SimpleURLLoaderWrapper.emit (node:events:526:28)
+2023-02-01 21:53:46.786 [info] update#setState idle
+2023-02-01 21:54:35.056 [info] Waiting for extension host with pid 7628 to exit.
+2023-02-01 21:54:35.356 [info] Extension host with pid 7628 exited with code: 0, signal: null.

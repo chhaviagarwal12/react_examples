@@ -1,0 +1,10 @@
+2023-01-27 18:55:03.149 [info] update#setState idle
+2023-01-27 18:55:04.736 [info] Starting extension host with pid 17124 (fork() took 29 ms).
+2023-01-27 18:55:33.159 [info] update#setState checking for updates
+2023-01-27 18:55:33.263 [info] update#setState idle
+2023-01-27 19:55:33.180 [info] update#setState checking for updates
+2023-01-27 19:55:34.016 [info] update#setState idle
+2023-01-27 20:55:33.519 [info] update#setState checking for updates
+2023-01-27 20:55:33.983 [info] update#setState idle
+2023-01-27 21:29:26.562 [info] Waiting for extension host with pid 17124 to exit.
+2023-01-27 21:29:26.937 [info] Extension host with pid 17124 exited with code: 0, signal: null.

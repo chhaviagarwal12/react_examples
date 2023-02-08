@@ -1,0 +1,12 @@
+2023-01-30 17:27:48.806 [info] update#setState idle
+2023-01-30 17:27:49.839 [info] Starting extension host with pid 16964 (fork() took 25 ms).
+2023-01-30 17:28:18.815 [info] update#setState checking for updates
+2023-01-30 17:28:19.257 [info] update#setState idle
+2023-01-30 18:28:18.836 [info] update#setState checking for updates
+2023-01-30 18:28:19.287 [info] update#setState idle
+2023-01-30 19:28:18.955 [info] update#setState checking for updates
+2023-01-30 19:28:19.220 [info] update#setState idle
+2023-01-30 20:28:18.968 [info] update#setState checking for updates
+2023-01-30 20:28:19.322 [info] update#setState idle
+2023-01-30 20:43:03.864 [info] Waiting for extension host with pid 16964 to exit.
+2023-01-30 20:43:04.187 [info] Extension host with pid 16964 exited with code: 0, signal: null.

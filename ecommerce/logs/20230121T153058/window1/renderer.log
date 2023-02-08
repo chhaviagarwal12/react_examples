@@ -1,3 +1,0 @@
-2023-01-21 15:31:15.385 [error] net::ERR_NAME_NOT_RESOLVED: Error: net::ERR_NAME_NOT_RESOLVED
-    at SimpleURLLoaderWrapper.<anonymous> (node:electron/js2c/browser_init:105:7047)
-    at SimpleURLLoaderWrapper.emit (node:events:526:28)

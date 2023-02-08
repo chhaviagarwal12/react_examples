@@ -1,0 +1,8 @@
+2023-02-08 11:19:21.447 [info] update#setState idle
+2023-02-08 11:19:24.019 [info] Starting extension host with pid 20856 (fork() took 23 ms).
+2023-02-08 11:19:53.012 [info] update#setState checking for updates
+2023-02-08 11:19:53.023 [info] update#setState downloading
+2023-02-08 11:20:13.282 [info] update#setState updating
+2023-02-08 11:20:50.643 [info] update#setState ready
+2023-02-08 13:04:16.735 [info] Waiting for extension host with pid 20856 to exit.
+2023-02-08 13:04:17.029 [info] Extension host with pid 20856 exited with code: 0, signal: null.

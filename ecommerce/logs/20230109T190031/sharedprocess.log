@@ -1,4 +1,0 @@
-2023-01-09 19:00:34.069 [info] Starting worker process with pid 27692 (type: fileWatcher, window: 1).
-2023-01-09 19:00:34.423 [info] WSL is not installed, so could not detect WSL profiles
-2023-01-09 19:00:54.691 [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {}
-2023-01-09 21:30:05.916 [warning] No ptyHost heartbeat after 6 seconds
