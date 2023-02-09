@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 const BurgerMenu=(props)=>{
   const [open,setOpen]=useState(false)
     const ref=useRef()
- console.log("in burger menu component",props.userProfile)
+//  console.log("in burger menu component",props.userProfile)
     // useEffect(()=>{
     //     window.addEventListener("click",(event)=>{
     //         if(ref.current.contains(event.target)){
@@ -37,7 +37,7 @@ const BurgerMenu=(props)=>{
 
 
 const mapStateToProps=(state)=>{
- console.log("from burger menu map state to props",state.userProfile)
+//  console.log("from burger menu map state to props",state.userProfile)
     return{
        userProfile:state.userProfile.data
    }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import 'semantic-ui-css/semantic.min.css'
 import { connect } from "react-redux";
 import {NavLink} from 'react-router-dom'
@@ -7,8 +7,12 @@ import { Label } from "semantic-ui-react";
 
 const MainMenu=(props)=>{
     const [flag,setFlag]=useState(true)
-    // console.log("from main menu component",window.localStorage.getItem("token"))
-  
+    const [token,setToken]=useState(null)
+   
+    // useEffect(()=>{
+    //     setToken(window.localStorage.getItem("token"))
+    // },[token])
+    
     return(
         <>
             <div className="ui secondary menu">
@@ -52,7 +56,7 @@ const MainMenu=(props)=>{
                 setFlag(!flag)
                 }}>
                 
-            {(window.localStorage.getItem("token"))?
+            {(token)?
                 ( <div><i className="log out large icon"/>LOGOUT</div>)
                 : ( <div><i className="sign in large icon"/>LOGIN</div>)}
             </NavLink>

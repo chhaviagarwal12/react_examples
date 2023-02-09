@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useEffect ,useRef} from "react";
 import { useState } from "react";
 import { Button,Label } from "semantic-ui-react";
 import fakeStore from "../../apis/fakeStore"
 import { userDetails } from "../../actions";
 import { connect } from "react-redux";
+import {  useNavigate } from "react-router-dom";
+import Loader from "../Loader"
 
 
 const UserLogin=(props)=>{
 
     const [username,setUsername]=useState("")
     const [passwd,setPassword]=useState("")
-   //  const [userId,setUserId]=useState()
-   // let responseStatus;
-
+   const [responseStatus,setResponseStatus]=useState(null)
+   const ref=useRef()
+   const navigate=useNavigate()
+   useEffect(()=>{
+      // if(!responseStatus){ 
+      //    <Loader/>
+      // }
+      if(responseStatus){
+         
+      }
+     console.log("useEffect",ref.current.props.onClick)
+   },[responseStatus])
 
     async function userLoginRequest(){
       try{
@@ -20,7 +31,7 @@ const UserLogin=(props)=>{
              username: username,
             password: passwd
             })
-            //   responseStatus=response.status 
+              setResponseStatus(response.status) 
             const key=Object.keys(response.data)[0]
             const value=Object.values(response.data)[0]
             window.localStorage.setItem(key,value)
@@ -37,6 +48,7 @@ const UserLogin=(props)=>{
    const getUserList=async()=>{
       try{
          const response=await fakeStore.get('/users')
+         setResponseStatus(response.status) 
          console.log("from get user list function response",response)
          for(const userdata of response.data){
                      if(Object.is(username,userdata.username)){
@@ -46,8 +58,8 @@ const UserLogin=(props)=>{
                         await props.userDetails(userdata.id)
                      }
                   }
-                  
-                  //  window.location.replace("/")
+                  navigate("/")
+                 
                  
       }
       catch(error){
@@ -58,8 +70,9 @@ const UserLogin=(props)=>{
 
  const handleSubmit=(event)=>{
    // console.log("in handle submit")
-    event.preventDefault();
 
+    event.preventDefault();
+ 
     
  }
  const handleUsername=(event)=>{
@@ -105,14 +118,15 @@ const UserLogin=(props)=>{
                </div>
                 
                <div className="ui field">
-               <Button  type="submit" color="pink"  onClick={(event)=>{
+               <Button ref={ref} type="submit" color="pink"  onClick={(event)=>{
                   handleSubmit(event)
-                  userLoginRequest()}} >SUBMIT</Button>
+                  userLoginRequest()}}>SUBMIT</Button>
+                  {/* {(responseStatus===200)?<div></div>:<Loader/>} */}
                </div>
                  
             </div>
             </div> 
-            {/* {responseStatus===200?<div></div>:<Loader/>} */}
+            
             </div>
     )
 }
