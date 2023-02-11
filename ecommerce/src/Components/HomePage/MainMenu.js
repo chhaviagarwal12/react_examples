@@ -8,13 +8,26 @@ import { Label } from "semantic-ui-react";
 const MainMenu=(props)=>{
     const [loginFlag,setLoginFlag]=useState(false)
     const [token,setToken]=useState(null)
-   
-   console.log("<------------------in main menu component rendered-------------->", props.loginResponse)
-    // useEffect(()=>{
-    //    setToken(props.loginResponse)
-    // },[props.loginResponse])
+    console.log("<------------------in main menu component rendered-------------->",Object.keys(props.loginResponse)[0])
+  
+    useEffect(()=>{
+        
+        if(Object.keys(props.loginResponse).length!==0 ){
+            const key=Object.keys(props.loginResponse)[0]
+            const value=Object.values(props.loginResponse)[0]
+            window.localStorage.setItem(key,value)
+            setToken(value)
+             }
+        
+    },[Object.keys(props.loginResponse)[0]])
     
-    
+    const clearLocalStorage=()=>{
+        console.log("------")
+        window.localStorage.clear()
+        setToken(null)
+        // window.location.reload()
+    }
+ 
     return(
         <>
             <div className="ui secondary menu">
@@ -54,21 +67,21 @@ const MainMenu=(props)=>{
             </NavLink>
             
             < NavLink to="/user" className={({isActive})=>
-                isActive ? 'pink active item':'item' } 
-                // setFlag(!flag)
-                onClick={()=>{console.log("Token VAlue: ", props.loginResponse); window.sessionStorage.clear()}} >   
-            {(Object.keys(props.loginResponse).length)?
-                // ( <div><i className="log out large icon"/>LOGOUT</div>)
-                // : ( <div><i className="sign in large icon"/>LOGIN</div>)}
-                (console.log("props.loginResponse t:", window.sessionStorage)):(console.log("props.loginResponse f:", window.sessionStorage))}
-                login
+                isActive ? 'pink active item':'item' } >  
+                {/* onClick={()=>{
+             window.localStorage.clear()}}   */}
+             {/* (window.localStorage.getItem("token")!==null) */}
+            {(token!==null)?
+                ( <div onClick={clearLocalStorage}><i className="log out large icon"/>LOGOUT</div>)
+                : ( <div><i className="sign in large icon"/>LOGIN</div>)}
+               
             </NavLink>
  </div> 
      </>
  )
 }
 const mapStateToProps=(state)=>{
-    console.log("from main menu component",state.userLogin.token)
+    console.log("==from main menu component mapStateToProps==",Object.keys(state.userLogin))
     
    return{
    cartItems:state.addToCart,

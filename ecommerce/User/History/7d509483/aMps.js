@@ -21,7 +21,7 @@ const BurgerMenu=(props)=>{
         <div ref={ref}>
             <Menu  isOpen={open} noOverlay customBurgerIcon={<i className='bars large icon'/>} >
             <Link to='/userprofile' className='menu-item'>
-                {window.sessionStorage.getItem("token") && (props.userProfile)?
+                {window.localStorage.getItem("token") && (props.userProfile)?
             `${(props.userProfile.name.firstname)} ${(props.userProfile.name.lastname)}`:"User Profile"}
              <i className="user large icon">
                     </i></Link>

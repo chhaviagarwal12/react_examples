@@ -7,7 +7,7 @@ import Loader from "../Loader";
 const UserProfile=({userProfile})=>{
     // console.log("user profile props",userProfile.data.name) 
     
-    if(!(window.sessionStorage.getItem("token"))){
+    if(!(window.localStorage.getItem("token"))){
         return(
             <LoginMessage/>
         )

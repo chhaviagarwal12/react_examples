@@ -36,7 +36,7 @@ const UserLogin=(props)=>{
             const value=Object.values(props.loginResponse)[0]
            
             getUserList()
-            window.sessionStorage.setItem(key,value)
+            window.localStorage.setItem(key,value)
             navigate("/")
                   
       }

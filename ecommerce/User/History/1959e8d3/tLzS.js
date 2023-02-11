@@ -31,7 +31,7 @@ const Cart=(props)=>{
             })
         )
     }
-    if(window.sessionStorage.getItem("token")){
+    if(window.localStorage.getItem("token")){
         return(
             <div>
                 <Shopping/>

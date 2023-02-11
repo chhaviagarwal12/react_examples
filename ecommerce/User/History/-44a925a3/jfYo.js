@@ -35,7 +35,7 @@ const UserLogin=(props)=>{
             
             const value=Object.values(props.loginResponse)[0]
            
-            window.sessionStorage.setItem(key,value)
+            window.localStorage.setItem(key,value)
             getUserList()
            
           

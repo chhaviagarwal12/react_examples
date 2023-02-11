@@ -25,28 +25,18 @@ const UserLogin=(props)=>{
    //    }
    //   console.log("useEffect",ref.current.props.onClick)
    // },[responseStatus])
-   console.log("SessionStorage: ",props.loginResponse)
+   
    async  function userLoginRequest(){
-      
-            await props.userLogin(username,passwd)
-            //setResponseStatus(response.status)
-           
-            const key=Object.keys(props.loginResponse)[0]
-            
-            const value=Object.values(props.loginResponse)[0]
-           
-            getUserList()
-            
-            window.sessionStorage.setItem(key,value)
-                  
-      }
+                  await props.userLogin(username,passwd)
+                     getUserList()
+                 }
       
  
    const getUserList=async()=>{
       try{
          const response=await fakeStore.get('/users')
          setResponseStatus(response.status) 
-         console.log("from get user list function response",response)
+         // console.log("from get user list function response",response)
          for(const userdata of response.data) {
             if(Object.is(username,userdata.username)) {
                console.log("userdata id",userdata.id)
@@ -67,7 +57,6 @@ const UserLogin=(props)=>{
 
  const handleSubmit=(event)=>{
    // console.log("in handle submit")
-
     event.preventDefault();
  
     
@@ -127,11 +116,11 @@ const UserLogin=(props)=>{
             </div>
     )
 }
-const mapStateToProps=(state)=>{
-   console.log("in user login component",state.userLogin) 
-   return{
-      loginResponse:state.userLogin
-   }
-}
+// const mapStateToProps=(state)=>{
+//    console.log("in user login component",state.userLogin) 
+//    return{
+//       loginResponse:state.userLogin
+//    }
+// }
 
-export default connect(mapStateToProps,{userDetails,userLogin})(UserLogin)
+export default connect(null,{userDetails,userLogin})(UserLogin)

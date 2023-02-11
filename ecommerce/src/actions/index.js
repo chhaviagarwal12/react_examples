@@ -45,7 +45,7 @@ export const getSingleCategory=(category)=>async dispatch=>{
 export const userDetails=(userId)=>async dispatch=>{
     
     const response=await fakeStore.get(`/users/${userId}`)
-    console.log("in user details action creator",response.data)
+    // console.log("in user details action creator",response.data)
     dispatch({
         type:'USER_DETAILS',
         payload:{data:response.data,status:response.status}

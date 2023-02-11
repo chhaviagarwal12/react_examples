@@ -6,7 +6,7 @@ import LoginMessage from "../LoginMessage";
 
 const Cart=(props)=>{
 
-
+    console.log("==from cart component render==")
 
  const renderedList=()=>{
             return(
@@ -31,7 +31,7 @@ const Cart=(props)=>{
             })
         )
     }
-    if(window.sessionStorage.getItem("token")){
+    if(window.localStorage.getItem("token")){
         return(
             <div>
                 <Shopping/>

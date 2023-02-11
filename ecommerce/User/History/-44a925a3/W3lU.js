@@ -25,7 +25,7 @@ const UserLogin=(props)=>{
    //    }
    //   console.log("useEffect",ref.current.props.onClick)
    // },[responseStatus])
-   console.log("SessionStorage: ",props.loginResponse)
+   console.log("localStorage: ",props.loginResponse)
    async  function userLoginRequest(){
       
             await props.userLogin(username,passwd)
@@ -37,7 +37,7 @@ const UserLogin=(props)=>{
            
             getUserList()
             
-            window.sessionStorage.setItem(key,value)
+            window.localStorage.setItem(key,value)
                   
       }
       

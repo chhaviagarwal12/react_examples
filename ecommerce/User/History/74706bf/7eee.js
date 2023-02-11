@@ -56,11 +56,11 @@ const MainMenu=(props)=>{
             < NavLink to="/user" className={({isActive})=>
                 isActive ? 'pink active item':'item' } 
                 // setFlag(!flag)
-                onClick={()=>{console.log("Token VAlue: ", props.loginResponse); window.sessionStorage.clear()}} >   
+                onClick={()=>{console.log("Token VAlue: ", props.loginResponse); window.localStorage.clear()}} >   
             {(Object.keys(props.loginResponse).length)?
                 // ( <div><i className="log out large icon"/>LOGOUT</div>)
                 // : ( <div><i className="sign in large icon"/>LOGIN</div>)}
-                (console.log("props.loginResponse t:", window.sessionStorage)):(console.log("props.loginResponse f:", window.sessionStorage))}
+                (console.log("props.loginResponse t:", window.localStorage)):(console.log("props.loginResponse f:", window.localStorage))}
                 login
             </NavLink>
  </div> 
