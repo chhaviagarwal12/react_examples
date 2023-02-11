@@ -1,0 +1,8 @@
+2023-02-09 18:15:28.016 [info] Starting worker process with pid 316 (type: fileWatcher, window: 1).
+2023-02-09 18:15:28.546 [info] WSL is not installed, so could not detect WSL profiles
+2023-02-09 18:19:03.372 [info] Getting Manifest... firefox-devtools.vscode-firefox-debug
+2023-02-09 18:19:03.381 [info] Installing extension: firefox-devtools.vscode-firefox-debug
+2023-02-09 18:19:05.899 [info] Extracted extension to c:\Users\chhav\.vscode\extensions\.e38b1c8e-d243-4795-8385-1e8cdb76ba78: firefox-devtools.vscode-firefox-debug
+2023-02-09 18:19:05.909 [info] Renamed to c:\Users\chhav\.vscode\extensions\firefox-devtools.vscode-firefox-debug-2.9.8
+2023-02-09 18:19:05.914 [info] Extracting completed. firefox-devtools.vscode-firefox-debug
+2023-02-09 18:19:05.945 [info] Extension installed successfully: firefox-devtools.vscode-firefox-debug
