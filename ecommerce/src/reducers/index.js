@@ -8,6 +8,7 @@ import setQtyReducer from "./setQtyReducer";
 import userDetailsReducer from "./userDetailsReducer";
 import addToWishlistReducer from "./addToWishlistReducer";
 import userLoginReducer from "./userLoginReducer";
+import getUserCartReducer from "./getUserCartReducer"
 
 
 export default combineReducers({
@@ -19,5 +20,6 @@ export default combineReducers({
     setQty:setQtyReducer,
     userProfile:userDetailsReducer,
     addToWishlist:addToWishlistReducer,
-    userLogin:userLoginReducer
+    userLogin:userLoginReducer,
+    getUserCart:getUserCartReducer
 })

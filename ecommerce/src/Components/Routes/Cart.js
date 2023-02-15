@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import Shopping from "./ShoppingSteps"
 import { connect } from "react-redux";
 import LoginMessage from "../LoginMessage";
+import { getCartDetails } from "../../actions"
 
 
 const Cart=(props)=>{
 
+    const [userId,setUserId]=useState("")
+    // setUserId(window.localStorage.getItem("id"))
     console.log("==from cart component render==")
+    useEffect(()=>{
+                props.getCartDetails(window.localStorage.getItem("id"))
+                // props.getCartDetails(5)
+      
+    },[])
 
  const renderedList=()=>{
             return(
@@ -49,13 +57,14 @@ const Cart=(props)=>{
     
 }
 const mapStateToProps=(state)=>{
-     //console.log("from cart component",state.userProfile)
+     console.log("from cart component",state)
      
     return{
     cartItems:state.addToCart,
-    quantity:state.setQty
+    quantity:state.setQty,
+    getUserCart:state.getUserCart
     
     }
 }
 
-export default connect(mapStateToProps)(Cart)
+export default connect(mapStateToProps,{getCartDetails})(Cart)

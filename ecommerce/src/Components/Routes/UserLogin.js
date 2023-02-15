@@ -42,6 +42,7 @@ const UserLogin=(props)=>{
                console.log("userdata id",userdata.id)
                //  setUserId(userdata.id)
                //  console.log("from user login",userId)
+               window.localStorage.setItem("id",userdata.id)
                props.userDetails(userdata.id)
                break
             }

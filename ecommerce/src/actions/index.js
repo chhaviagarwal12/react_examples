@@ -99,11 +99,12 @@ export const addToWishlist=(selectedProduct)=>{
 }
 //for getting cart details
 export const getCartDetails=(userId)=>async dispatch=>{
-    const response=await fakeStore.get("/cart/?userId")
-    return{
+    const response=await fakeStore.get(`/carts/user/${userId}`)
+    console.log("from getCartDetails action creator",response)
+    dispatch({
         type:'CART_DETAILS',
         payload:{data:response.data,status:response.status}
-    }
+    })
 }
 
 
