@@ -1,8 +1,0 @@
-2023-01-26 13:18:26.785 [info] Starting worker process with pid 6188 (type: fileWatcher, window: 1).
-2023-01-26 13:18:27.453 [info] WSL is not installed, so could not detect WSL profiles
-2023-01-26 13:18:28.623 [error] SharedProcess (worker, fileWatcher): Worker process with pid 6188 terminated by itself with code 3221225477, signal: null (type: fileWatcher, window: 1)
-2023-01-26 13:18:28.635 [info] Starting worker process with pid 16960 (type: fileWatcher, window: 1).
-2023-01-26 16:13:48.315 [warning] No ptyHost heartbeat after 6 seconds
-2023-01-26 17:34:38.209 [warning] No ptyHost heartbeat after 6 seconds
-2023-01-26 17:34:38.555 [error] RequestService#request (browser) - error https://az764295.vo.msecnd.net/extensions/marketplace.json {}
-2023-01-26 19:01:45.120 [warning] No ptyHost heartbeat after 6 seconds
