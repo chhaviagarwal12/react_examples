@@ -2,20 +2,34 @@ import React, { useEffect,useState } from "react";
 import Shopping from "./ShoppingSteps"
 import { connect } from "react-redux";
 import LoginMessage from "../LoginMessage";
-import { getCartDetails } from "../../actions"
+import { getSingleProduct } from "../../actions"
+import fakeStore from "../../apis/fakeStore"
 
 
 const Cart=(props)=>{
 
     const [userId,setUserId]=useState("")
-    // setUserId(window.localStorage.getItem("id"))
-    console.log("==from cart component render==")
+    const [productQty,setProductQty]=useState(0)
     useEffect(()=>{
-                props.getCartDetails(window.localStorage.getItem("id"))
-                // props.getCartDetails(5)
+                setUserId(window.localStorage.getItem("id"))
+                fetchUserCart()
       
-    },[])
+    },[userId])
 
+    async  function fetchUserCart(){
+            try{
+            const response=await fakeStore.get(`/carts/${userId}`)
+            if(response.data.products){
+                for(let idx of response.data.products ){
+                    props.getSingleProduct(idx.productId)
+                    setProductQty(idx.quantity)
+                }
+            }
+                   }
+        catch(error){
+            console.log("from cart componenet api request",error)
+        }
+       }
  const renderedList=()=>{
             return(
                 props.cartItems.map((item)=>{
@@ -29,7 +43,7 @@ const Cart=(props)=>{
                     <a className="header">{item.title}</a>
                     <div className="meta">
                         <span>Price:&#x20b9;{item.price}</span>
-                        <span>Qty:{props.quantity.map((itemQty)=>item.id===itemQty.id?itemQty.quantity:"")}</span>
+                        <span>Qty:{props.quantity.map((itemQty)=>item.id===itemQty.id?itemQty.quantity:productQty)}</span>
                     </div>
                         </div>
                         </div>
@@ -62,9 +76,9 @@ const mapStateToProps=(state)=>{
     return{
     cartItems:state.addToCart,
     quantity:state.setQty,
-    getUserCart:state.getUserCart
+
     
     }
 }
 
-export default connect(mapStateToProps,{getCartDetails})(Cart)
+export default connect(mapStateToProps,{getSingleProduct})(Cart)

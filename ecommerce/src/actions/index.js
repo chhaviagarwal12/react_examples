@@ -11,14 +11,15 @@ import fakeStore from "../apis/fakeStore"
 // }
 
 
-//getting single product in a selected category
-// export const getSingleProduct=(id)=>async dispatch=>{
-//     const response=await fakeStore.get('/products/:id')
-//     dispatch({
-//         type:'SINGLE_PRODUCT',
-//         payload:response.data
-//     })
-// }
+// getting single product in a selected category
+export const getSingleProduct=(productId)=>async dispatch=>{
+    const response=await fakeStore.get(`/products/${productId}`)
+    console.log("from singleProduct action creator called",response.data)
+    dispatch({
+        type:'SINGLE_PRODUCT',
+        payload:response.data
+    })
+}
 
 
 //for getting all categories
@@ -98,13 +99,14 @@ export const addToWishlist=(selectedProduct)=>{
     }
 }
 //for getting cart details
-export const getCartDetails=(userId)=>async dispatch=>{
-    const response=await fakeStore.get(`/carts/user/${userId}`)
-    console.log("from getCartDetails action creator",response)
-    dispatch({
-        type:'CART_DETAILS',
-        payload:{data:response.data,status:response.status}
-    })
-}
+// export const getCartDetails=(userId)=>async dispatch=>{
+//     const response=await fakeStore.get(`/carts/${userId}`)
+//     console.log("from getCartDetails action creator",response.data)
+//     dispatch({
+//         type:'CART_DETAILS',
+//         // payload:{data:response.data,status:response.status}
+//         payload:response.data
+//     })
+// }
 
 
