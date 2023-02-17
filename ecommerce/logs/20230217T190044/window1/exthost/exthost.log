@@ -1,0 +1,17 @@
+2023-02-17 19:00:47.198 [info] Extension host with pid 25468 started
+2023-02-17 19:00:47.198 [info] Skipping acquiring lock for d:\examples\coursera_test\react_examples\ecommerce\User\workspaceStorage\e4f9a451059ddbe5198683f6e0734d6e.
+2023-02-17 19:00:47.360 [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2023-02-17 19:00:47.373 [info] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:javascript'
+2023-02-17 19:00:47.412 [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2023-02-17 19:00:47.418 [info] ExtensionService#_doActivateExtension vscode.npm, startup: true, activationEvent: 'workspaceContains:package.json'
+2023-02-17 19:00:48.574 [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2023-02-17 19:00:48.630 [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2023-02-17 19:00:49.094 [info] Eager extensions activated
+2023-02-17 19:00:49.126 [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2023-02-17 19:00:49.132 [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2023-02-17 19:00:49.161 [info] ExtensionService#_doActivateExtension ms-vscode-remote.remote-wsl-recommender, startup: false, activationEvent: 'onStartupFinished'
+2023-02-17 19:00:49.180 [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2023-02-17 19:00:50.199 [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2023-02-17 19:00:50.430 [info] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+2023-02-17 22:38:43.368 [info] Extension host terminating: renderer closed the MessagePort
+2023-02-17 22:38:43.838 [info] Extension host with pid 25468 exiting with code 0
