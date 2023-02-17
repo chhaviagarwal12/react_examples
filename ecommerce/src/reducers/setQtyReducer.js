@@ -1,10 +1,10 @@
-import { act } from "react-dom/test-utils"
+
 
 export default (state=[],action)=>{
     switch(action.type){
         case "INCREASE_QTY":
             
-            // console.log("in set qty reducer1 ", state)
+            console.log("in set qty reducer1 ", state)
             const index = state.findIndex(element=>element.id===action.payload.id)
 
             if(index===-1){

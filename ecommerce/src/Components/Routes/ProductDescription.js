@@ -52,8 +52,8 @@ const productDate=date.getFullYear()+""+date.getMonth()+""+date.getDate()
            <Button color='black' animated onClick={() =>{
         // setItem(productDescription)
         // addToCart(window.localStorage.getItem("id"),productDate,{productId:productDescription.id,quantity:1})
-            addToCart(productDescription)
-        increaseQty(productDescription.id,1)
+            addToCart(productDescription,1)
+        // increaseQty(productDescription.id,1)
         handleModalState(false)
       }}>
          <Button.Content visible>Add to Cart</Button.Content>

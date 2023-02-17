@@ -7,12 +7,12 @@ import { Label } from "semantic-ui-react";
 
 const MainMenu=(props)=>{
     
-    console.log("<------------------in main menu component rendered-------------->")
+    // console.log("<------------------in main menu component rendered-------------->")
   
     useEffect(()=>{
-        console.log("in use effect",window.localStorage.getItem("token"))
+        // console.log("in use effect",window.localStorage.getItem("token"))
         if(Object.keys(props.loginResponse).length!==0 ){
-            console.log("in use effect1")
+            // console.log("in use effect1")
             const key=Object.keys(props.loginResponse)[0]
             const value=Object.values(props.loginResponse)[0]
             window.localStorage.setItem(key,value)
@@ -22,7 +22,7 @@ const MainMenu=(props)=>{
     },[Object.keys(props.loginResponse)])
     
     const clearLocalStorage=()=>{
-        console.log("------")
+        // console.log("------")
         window.localStorage.clear()
       
         window.location.reload()
@@ -79,7 +79,7 @@ const MainMenu=(props)=>{
  )
 }
 const mapStateToProps=(state)=>{
-    console.log("==from main menu component mapStateToProps==",state.userLogin)
+    // console.log("==from main menu component mapStateToProps==",state.userLogin)
     
    return{
    cartItems:state.addToCart,

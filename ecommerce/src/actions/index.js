@@ -16,9 +16,9 @@ export const getSingleProduct=(productId,productQty)=>async dispatch=>{
     const response=await fakeStore.get(`/products/${productId}`)
     console.log("from singleProduct action creator called",response.data)
     dispatch({
-        type:'ADD_CART',
-        // payload:{data:response.data,quantity:productQty}
-        payload:response.data
+        type:'SINGLE_PRODUCT',
+        payload:{data:response.data,quantity:productQty}
+        // payload:response.data
     })
 }
 
@@ -82,22 +82,28 @@ export const userLogin=(username,passwd)=>async dispatch=>{
 //     })
 // }
 
-export const addToCart=(selectedProduct)=>{
-    return{
-        type:'ADD_CART',
-        payload:selectedProduct
-    }
-}
-//for getting cart details
-export const getCartDetails=(userId)=>async dispatch=>{
-    const response=await fakeStore.get(`/carts/${userId}`)
-    console.log("from getCartDetails action creator",response.data)
+// export const addToCart=(selectedProduct)=>{
+//     return{
+//         type:'ADD_CART',
+//         payload:selectedProduct
+//     }
+// }
+export const addToCart=(selectedProduct,quantity)=>dispatch=>{
     dispatch({
-        type:'CART_DETAILS',
-        // payload:{data:response.data,status:response.status}
-        payload:response.data
+        type:'ADD_CART',
+        payload:{data:selectedProduct,quantity}
     })
 }
+//for getting cart details
+// export const getCartDetails=(userId)=>async dispatch=>{
+//     const response=await fakeStore.get(`/carts/${userId}`)
+//     console.log("from getCartDetails action creator",response.data)
+//     dispatch({
+//         type:'CART_DETAILS',
+//         // payload:{data:response.data,status:response.status}
+//         payload:response.data
+//     })
+// }
 
 export const increaseQty=(idParam, qtyParam)=>{
     return{

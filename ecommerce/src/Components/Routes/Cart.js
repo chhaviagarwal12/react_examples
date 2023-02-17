@@ -1,56 +1,30 @@
-import React, { useEffect,useState } from "react";
+import React from "react";
 import Shopping from "./ShoppingSteps"
 import { connect } from "react-redux";
 import LoginMessage from "../LoginMessage";
 import { getSingleProduct } from "../../actions"
-import fakeStore from "../../apis/fakeStore"
+
 
 
 const Cart=(props)=>{
 
-    const [userId,setUserId]=useState("")
-    const [productQty,setProductQty]=useState(0)
-    useEffect(()=>{
-        if(props.getUserCart.products.length!==0){
-            for(let idx of props.getUserCart.products ){
-                props.getSingleProduct(idx.productId,idx.quantity)
-                              
-                 } 
-        }
-                setUserId(window.localStorage.getItem("id"))
-                // fetchUserCart()
-      
-    },[userId])
-
-    // async  function fetchUserCart(){
-    //         try{
-    //         const response=await fakeStore.get(`/carts/${userId}`)
-    //         if(response.data.products){
-    //             for(let idx of response.data.products ){
-    //                 props.getSingleProduct(idx.productId,idx.quantity)
-                  
-    //             }
-    //         }
-    //                }
-    //     catch(error){
-    //         console.log("from cart componenet api request",error)
-    //     }
-    //    }
- const renderedList=()=>{
-    console.log("quantity of product",productQty)
+  const renderedList=()=>{
+     console.log("props.cartItems",props.cartItems)
             return(
                 props.cartItems.map((item)=>{
+                    console.log("item cart component",item.quantity)
                 return(
-                <div className="ui divided items" key={item.id}>
+                <div className="ui divided items" key={item.data.id}>
                 <div className="item">  
                 <div className="ui tiny image">
-                <img src={`${item.image}`}/>
+                <img src={`${item.data.image}`}/>
                 </div>
                 <div className="content">
-                    <a className="header">{item.title}</a>
+                    <a className="header">{item.data.title}</a>
                     <div className="meta">
-                        <span>Price:&#x20b9;{item.price}</span>
-                        <span>Qty:{props.quantity.map((itemQty)=>item.id===itemQty.id?itemQty.quantity:productQty)}</span>
+                        <span>Price:&#x20b9;{item.data.price}</span>
+                        {/* <span>Qty:{props.quantity.map((itemQty)=>item.data.id===itemQty.id?itemQty.quantity:item.quantity)}</span> */}
+                        <span>Qty:{item.quantity}</span>
                     </div>
                         </div>
                         </div>
@@ -78,12 +52,12 @@ const Cart=(props)=>{
     
 }
 const mapStateToProps=(state)=>{
-     console.log("from cart component",state.getUserCart)
+    console.log("from cart component",state.addToCart)
      
     return{
     cartItems:state.addToCart,
     quantity:state.setQty,
-    getUserCart:state.getUserCart
+    // getUserCart:state.getUserCart
     
     }
 }
