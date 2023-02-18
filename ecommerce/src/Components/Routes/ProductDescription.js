@@ -35,7 +35,7 @@ const productDate=date.getFullYear()+""+date.getMonth()+""+date.getDate()
           <Image size='medium' src={`${productDescription.image}`} wrapped />
           <Modal.Description size="large">
             <b><p>{productDescription.description}</p></b>
-             <h3>Price:&#x20b9;{productDescription.price}</h3>
+             <h3>Price:${productDescription.price}</h3>
             <h3>Rating:{productDescription.rating.rate}</h3>
             <h3>Reviewed by:{productDescription.rating.count} people</h3>
           </Modal.Description>

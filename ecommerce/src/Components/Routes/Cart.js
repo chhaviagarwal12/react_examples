@@ -1,50 +1,23 @@
-import React from "react";
-import Shopping from "./ShoppingSteps"
-import { connect } from "react-redux";
+import React ,{useState} from "react";
+import Shopping from "../ShoppingSteps"
 import LoginMessage from "../LoginMessage";
-import { getSingleProduct } from "../../actions"
+import CartDetails from "./CartDetails"
+import ShippingDetails from "./ShippingDetails";
 
+const Cart=()=>{
+    const[completedStep1,setCompletedStep1]=useState(false);
 
-
-const Cart=(props)=>{
-
-  const renderedList=()=>{
-     console.log("props.cartItems",props.cartItems)
-            return(
-                props.cartItems.map((item)=>{
-                    console.log("item cart component",item)
-                return(
-                  
-                <div className="ui divided items" key={item.data.id}>
-                <div className="item">  
-                <div className="ui tiny image">
-                <img src={`${item.data.image}`}/>
-                </div>
-                <div className="content">
-                    <a className="header">{item.data.title}</a>
-                    <div className="meta">
-                        <span>Price:&#x20b9;{item.data.price}</span>
-                        {/* <span>Qty:{props.quantity.map((itemQty)=>item.data.id===itemQty.id?itemQty.quantity:item.quantity)}</span> */}
-                        <span>Qty:{item.quantity}</span>
-                    </div>
-                        </div>
-                        </div>
-                            </div>
-                )
-                
-            })
-        )
+    const setActiveStep=(activeFlag)=>{
+        // console.log("active flag",activeFlag)
+        setCompletedStep1(activeFlag)
     }
-    if(window.localStorage.getItem("token")){
+           if(window.localStorage.getItem("token")){
         return(
             <div>
-                <Shopping/>
-               
-                {renderedList()}
-                <div className="ui segment"></div>
-                   
+                <Shopping completed1={completedStep1}/>
                 
-                <button>NEXT</button>
+                {/* <CartDetails setActiveStep={setActiveStep}/> */}
+                <ShippingDetails setActiveStep={setActiveStep}/>
                 </div>
         )
     }
@@ -56,15 +29,6 @@ const Cart=(props)=>{
     }
     
 }
-const mapStateToProps=(state)=>{
-    console.log("from cart component",state.addToCart)
-     
-    return{
-    cartItems:state.addToCart,
-    quantity:state.setQty,
-    // getUserCart:state.getUserCart
-    
-    }
-}
 
-export default connect(mapStateToProps,{getSingleProduct})(Cart)
+
+export default Cart
