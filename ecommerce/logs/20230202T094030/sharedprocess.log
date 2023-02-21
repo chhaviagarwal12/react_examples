@@ -1,4 +1,0 @@
-2023-02-02 09:40:34.192 [info] Starting worker process with pid 13092 (type: fileWatcher, window: 1).
-2023-02-02 09:40:34.561 [info] WSL is not installed, so could not detect WSL profiles
-2023-02-02 14:28:34.740 [warning] No ptyHost heartbeat after 6 seconds
-2023-02-02 14:36:43.122 [warning] No ptyHost heartbeat after 6 seconds
