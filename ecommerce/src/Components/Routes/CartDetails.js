@@ -79,7 +79,7 @@ const CartDetails=(props)=>{
     
 
 const mapStateToProps=(state)=>{
-    console.log("from cart component",state.addToCart)
+    // console.log("from cart component",state.addToCart)
      
     return{
     cartItems:state.addToCart,
