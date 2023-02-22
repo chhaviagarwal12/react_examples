@@ -2,7 +2,9 @@ import React from "react";
 
 const PaymentDetails=()=>{
     return(
-        <div>payment</div>
+        <div>payment
+            <button>Done</button>
+        </div>
     )
 }
 export default PaymentDetails
