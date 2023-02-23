@@ -13,7 +13,7 @@ const ShippingDetails=({userProfile,setActiveStep})=>{
                         
                     </div>
                         
-                <div className="description">
+                <div>
                 {(userProfile.data.address.number)}<br/>
                 {(userProfile.data.address.street)}<br/>
                 {(userProfile.data.address.city)}<br/>

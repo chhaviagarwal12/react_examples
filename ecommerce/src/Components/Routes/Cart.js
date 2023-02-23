@@ -1,9 +1,9 @@
 import React ,{useState} from "react";
-import Shopping from "../ShoppingSteps"
+import Shopping from "../Cart/ShoppingSteps"
 import LoginMessage from "../LoginMessage";
-import CartDetails from "./CartDetails"
-import ShippingDetails from "./ShippingDetails";
-import PaymentDetails from "./PaymentDetails";
+import CartDetails from "../Cart/CartDetails"
+import ShippingDetails from "../Cart/ShippingDetails";
+import PaymentDetails from "../Cart/PaymentDetails";
 
 const Cart=()=>{
     const[completedStep1,setCompletedStep1]=useState(false);

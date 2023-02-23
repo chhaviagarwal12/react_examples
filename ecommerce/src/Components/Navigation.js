@@ -1,7 +1,7 @@
 import React from 'react'
 import {Routes,Route} from 'react-router-dom'
 import Products from "./Routes/ProductCategory"
-import Search from './Routes/Search'
+
 import Wishlist from './Routes/Wishlist'
 import Cart from './Routes/Cart'
 import Users from './Routes/UserLogin'
@@ -28,7 +28,7 @@ const Navigation=()=>{
              <Route path="/" element={<HomeImage/>}/>   
             <Route path="/products"  element={<Products returnCategory={setCategoryCallback}/>}></Route>
             <Route path={`/${selectedCategory}`} element={<SingleCategory selectedCategory={selectedCategory} />}/>
-            <Route path="/search"  element={<Search/>}></Route>
+           
             <Route path="/wishlist"  element={<Wishlist/>}></Route>
             <Route path="/cart"  element={<Cart/>}></Route>
             <Route path="/user" element={<Users/>}></Route>
