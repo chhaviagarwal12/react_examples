@@ -3,16 +3,23 @@ import React from "react"
 const CardForm=()=>{
     return(
         <div className="ui form">
+            <div className="field">
+            <label>Card Number</label>
             <div className="ui fluid icon input">
-                 <label>Card Number</label>
+         
                 <input type="text" placeholder="Card Number"/>
                 <i aria-hidden="true" class="credit card icon"></i>
             </div>
-         
-            <div className="ui fluid input">
-                <label>Name on card</label>
+            </div>
+            
+         <div className="field">
+         <label>Name on card</label>
+         <div className="ui fluid input">
+                
                 <input type="text" placeholder="Name on card"/>
             </div>
+         </div>
+           
          
             
             <div className="equal width fields">
