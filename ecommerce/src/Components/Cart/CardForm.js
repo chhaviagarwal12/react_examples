@@ -29,9 +29,10 @@ const CardForm=()=>{
                 </div>
                 <div className="field">
                 <label>CVV</label>
-                <input type="text" placeholder="CVV"/>
+                <input type="password" placeholder="CVV"/>
                 </div>
             </div>
+            <button className="ui pink focused  button">SAVE</button>
        </div>
     )
 }

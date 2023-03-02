@@ -25,7 +25,6 @@ const SingleCategory=(props)=>{
                     <div className="ui raised pink card" id="category-card"key={`${product.id}`} onClick={()=>{
                         setShow(!show);
                         setIdx(index);
-                       
                     } }>
                     
                         {/* <div className="card"> */}
@@ -80,7 +79,7 @@ const SingleCategory=(props)=>{
 
 }
 const mapStateToProps=(state)=>{
-// console.log("from map state to props of single category",state.singleCategory)
+console.log("from map state to props of single category",state.singleCategory)
 
 return{
     singleCategory:state.singleCategory

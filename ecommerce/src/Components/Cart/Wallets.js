@@ -15,7 +15,7 @@ const Wallet=()=>{
             <input type="radio" class="hidden" readonly="" tabindex="0" value="lg"/><label><i className="google wallet icon"/>Google Wallet </label> 
             </div>
             </div>
-            <button class="ui button">Submit</button>
+            <button className="ui pink focused  button">SUBMIT</button>
        
    </div>
    )

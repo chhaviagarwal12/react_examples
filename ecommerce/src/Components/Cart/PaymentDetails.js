@@ -1,24 +1,18 @@
 import React from "react";
-import { NavLink,Link } from "react-router-dom";
+import { Tab } from 'semantic-ui-react'
 import CardForm from "./CardForm"
 import UPIForm from "./UPIForm"
 import Wallets from "./Wallets"
 
 const PaymentDetails=()=>{
+    const panes = [
+        { menuItem: 'Credit/Debit Card', render: () => <Tab.Pane><CardForm/></Tab.Pane> },
+        { menuItem: 'UPI', render: () => <Tab.Pane><UPIForm/></Tab.Pane> },
+        { menuItem: 'Wallets', render: () => <Tab.Pane><Wallets/></Tab.Pane> },
+      ]
     return(
         <div>
-            <div className="ui pointing pink secondary menu">
-                <Link className="active item">Credit/Debit Card</Link>
-                <Link className="item">UPI</Link>
-                <Link className="item">Wallets</Link>
-            </div>
-                <div className="ui segment active tab">
-                    {/* <CardForm/> */}
-                    <UPIForm/>
-                    {/* <Wallets/> */}
-               
-                    
-                </div>
+          <Tab menu={{ color:'pink',secondary: true, pointing: true }} panes={panes}/>
                 </div>
     )
 }

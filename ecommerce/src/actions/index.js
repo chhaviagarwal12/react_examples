@@ -127,4 +127,10 @@ export const addToWishlist=(selectedProduct)=>{
     }
 }
 
-
+export const resetState=()=>dispatch=>{
+    dispatch(
+        {
+            type:'RESET_STATE'
+        }
+    )
+}

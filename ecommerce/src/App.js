@@ -3,6 +3,7 @@ import 'semantic-ui-css/semantic.min.css'
 import Navigation from './Components/Navigation'
 import Header from './Components/HomePage/Header'
 import Footer from './Components/Footer'
+import resetState from '../'
 class App extends React.Component{
 render(){
   return(

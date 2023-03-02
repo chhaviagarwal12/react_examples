@@ -15,7 +15,6 @@ export default combineReducers({
     allCategories:allCategories,
     singleCategory:singleCategory,
     allProducts:allProducts,
-    
     addToCart:addToCartReducer,
     setQty:setQtyReducer,
     userProfile:userDetailsReducer,

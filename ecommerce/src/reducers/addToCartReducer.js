@@ -4,7 +4,7 @@ export default (state=[],action)=>{
         //for adding new product in cart
         case "ADD_CART":
            
-        console.log("from add to cart reducer--addto cart",state,"----response",action.payload.data)    
+        // console.log("from add to cart reducer--addto cart",state,"----response",action.payload.data)    
        const index= state.findIndex(element=>element.data.id===action.payload.data.id)
       
             if(index===-1){
@@ -28,6 +28,11 @@ export default (state=[],action)=>{
             return(
                 state=[...state,action.payload]
             )
+            case 'RESET_STATE':
+                console.log("reset state",state)
+                return(
+                    state
+                )
             default:
             return state
     }
