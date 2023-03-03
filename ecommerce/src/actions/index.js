@@ -105,26 +105,26 @@ export const addToCart=(selectedProduct,quantity)=>dispatch=>{
 //     })
 // }
 
-export const increaseQty=(idParam, qtyParam)=>{
-    return{
+export const increaseQty=(idParam, qtyParam)=>dispatch=>{
+    dispatch({
         type:"INCREASE_QTY",
         payload: {"id": idParam, "quantity": qtyParam}
-    }
+    })
 }
 
-export const decreaseQty=(idParam, qtyParam)=>{
-    return{
+export const decreaseQty=(idParam, qtyParam)=>dispatch=>{
+    dispatch({
         type:"DECREASE_QTY",
         payload:{"id": idParam, "quantity": qtyParam}
-    }
+    })
 }
 
-export const addToWishlist=(selectedProduct)=>{
+export const addToWishlist=(selectedProduct)=>dispatch=>{
     // console.log("selected product action ",selectedProduct)
-    return{
+    dispatch({
         type:"ADD_WISHLIST",
         payload:selectedProduct
-    }
+    })
 }
 
 export const resetState=()=>dispatch=>{

@@ -1,7 +1,7 @@
 import React ,{useState} from "react";
 import { connect } from "react-redux";
 
-import { getSingleProduct } from "../../actions"
+import { getSingleProduct,increaseQty,decreaseQty } from "../../actions"
 
 
 
@@ -29,6 +29,16 @@ const CartDetails=(props)=>{
                         <span>Price:${item.data.price}</span>
                         {/* <span>Qty:{props.quantity.map((itemQty)=>item.data.id===itemQty.id?itemQty.quantity:item.quantity)}</span> */}
                         <span>Qty:{item.quantity}</span>
+                       <span></span>
+                        <div className="ui right floated mini input">
+                        <button className="ui pink  mini icon button" onClick={()=>props.decreaseQty(item.data.id,item.quantity)}>
+                        <i aria-hidden="true" className="minus icon"></i>
+                        </button>
+                        <input type="text"  value={item.quantity}/>
+                        <button className="ui pink  mini icon button" onClick={()=>props.increaseQty(item.data.id,item.quantity)}>
+                        <i aria-hidden="true" className="add icon"></i>
+                        </button>
+                        </div>
                     </div>
                         </div>
                         </div>
@@ -46,29 +56,29 @@ const CartDetails=(props)=>{
                 {renderedList()}
                 </div>
                 <table className="ui pink three column table">
-                    <tbody class="">
+                    <tbody className="">
                         <tr>
-                            <td class=""> <h3>Price Details</h3></td>
+                            <td className=""> <h3>Price Details</h3></td>
                         </tr>
                         <tr>
-                            <td class=""> Bag MRP {(props.cartItems.length>1)?`(${props.cartItems.length} items)`:`(${props.cartItems.length} item)`}</td>
+                            <td className=""> Bag MRP {(props.cartItems.length>1)?`(${props.cartItems.length} items)`:`(${props.cartItems.length} item)`}</td>
                             <td></td>
                             <td className="right aligned">${totalPrice}</td>
                         </tr>
                         <tr>
-                            <td class="">Bag Discount</td>
+                            <td className="">Bag Discount</td>
                             <td></td>
                             <td className="right aligned">$0</td>
                             </tr>
                         <tr>
-                            <td class="">Shipping</td>
+                            <td className="">Shipping</td>
                             <td></td>
                             <td className="right aligned">{(totalPrice>100)?("Free"):`$${totalPrice*0.2}`}</td>
                             </tr>
                         <tr>
                         <td></td>
                           <td className="center aligned"><button className="ui pink focused  button" onClick={()=>{
-                             props.setActiveStep(true)
+                            props.setActiveStep(true)
                           }}>PROCEED</button></td>
                           <td></td>
                         </tr>
@@ -79,7 +89,7 @@ const CartDetails=(props)=>{
     
 
 const mapStateToProps=(state)=>{
-    // console.log("from cart component",state.addToCart)
+    console.log("from cart component",state.setQty)
      
     return{
     cartItems:state.addToCart,
@@ -89,4 +99,4 @@ const mapStateToProps=(state)=>{
     }
 }
 
-export default connect(mapStateToProps,{getSingleProduct})(CartDetails)
+export default connect(mapStateToProps,{getSingleProduct,increaseQty,decreaseQty})(CartDetails)

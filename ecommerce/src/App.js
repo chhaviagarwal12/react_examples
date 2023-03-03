@@ -3,7 +3,8 @@ import 'semantic-ui-css/semantic.min.css'
 import Navigation from './Components/Navigation'
 import Header from './Components/HomePage/Header'
 import Footer from './Components/Footer'
-import resetState from '../'
+import {resetState} from './actions'
+
 class App extends React.Component{
 render(){
   return(
@@ -29,7 +30,7 @@ componentWillUnmount(){
   document.addEventListener("unload",()=>{
   window.localStorage.clear()
   })
-
+  this.props.resetState()
 }
 }
 export default App
