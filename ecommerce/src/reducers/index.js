@@ -4,7 +4,6 @@ import allProducts from "./allProductsReducer"
 import allCategories from "./allCategoriesReducer"
 import singleCategory from "./singleCategoryReducer"
 import addToCartReducer from "./addToCartReducer";
-import setQtyReducer from "./setQtyReducer";
 import userDetailsReducer from "./userDetailsReducer";
 import addToWishlistReducer from "./addToWishlistReducer";
 import userLoginReducer from "./userLoginReducer";
@@ -16,7 +15,6 @@ export default combineReducers({
     singleCategory:singleCategory,
     allProducts:allProducts,
     addToCart:addToCartReducer,
-    setQty:setQtyReducer,
     userProfile:userDetailsReducer,
     addToWishlist:addToWishlistReducer,
     userLogin:userLoginReducer,

@@ -3,8 +3,7 @@ export default (state=[],action)=>{
     switch(action.type){
         //for adding new product in cart
         case "ADD_CART":
-           
-        // console.log("from add to cart reducer--addto cart",state,"----response",action.payload.data)    
+      
        const index= state.findIndex(element=>element.data.id===action.payload.data.id)
       
             if(index===-1){
@@ -13,26 +12,38 @@ export default (state=[],action)=>{
                     )
             }
             else {
-                // return  state
-                const newState = state.map(
-                    element=> element.data.id === action.payload.data.id ?  
-               
-                {"data": element.data, "quantity": element.quantity+1}: {"data": element.data, "quantity": element.quantity}   
-
-                )
-                console.log("newState",newState)
-                return newState 
+              
+        const newState = state.map(
+        element=> element.data.id === action.payload.data.id ?  
+        {"data": element.data, "quantity": element.quantity+1}: 
+        {"data": element.data, "quantity": element.quantity})
+        return newState 
             }
             //for existing cart of user
              case 'SINGLE_PRODUCT': 
             return(
                 state=[...state,action.payload]
             )
-            case 'RESET_STATE':
-                console.log("reset state",state)
-                return(
-                    state
-                )
+
+            case 'INCREASE_QTY':
+              console.log("increase qty",action.payload)
+              const newState1 = state.map(
+                element=> element.data.id === action.payload ?  
+                {"data": element.data, "quantity": element.quantity+1}: 
+                {"data": element.data, "quantity": element.quantity})
+                return newState1    
+        
+                case 'DECREASE_QTY':
+                    const newState2 = state.map(
+                        element=> element.data.id === action.payload ?  
+                        {"data": element.data, "quantity": element.quantity-1}: 
+                        {"data": element.data, "quantity": element.quantity})
+                        return newState2   
+            // case 'RESET_STATE':
+            //     console.log("reset state",state)
+            //     return(
+            //         state
+            //     )
             default:
             return state
     }

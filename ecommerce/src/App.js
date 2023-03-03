@@ -30,7 +30,7 @@ componentWillUnmount(){
   document.addEventListener("unload",()=>{
   window.localStorage.clear()
   })
-  this.props.resetState()
+  // this.props.resetState()
 }
 }
 export default App

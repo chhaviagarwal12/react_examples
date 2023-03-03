@@ -105,17 +105,19 @@ export const addToCart=(selectedProduct,quantity)=>dispatch=>{
 //     })
 // }
 
-export const increaseQty=(idParam, qtyParam)=>dispatch=>{
+export const increaseQty=(id)=>dispatch=>{
     dispatch({
         type:"INCREASE_QTY",
-        payload: {"id": idParam, "quantity": qtyParam}
+        payload:id
+        
     })
 }
 
-export const decreaseQty=(idParam, qtyParam)=>dispatch=>{
+export const decreaseQty=(id)=>dispatch=>{
     dispatch({
         type:"DECREASE_QTY",
-        payload:{"id": idParam, "quantity": qtyParam}
+        payload:id
+       
     })
 }
 

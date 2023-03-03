@@ -1,22 +1,22 @@
 import React ,{useState} from "react";
 import { connect } from "react-redux";
-
 import { getSingleProduct,increaseQty,decreaseQty } from "../../actions"
 
 
 
 const CartDetails=(props)=>{
    
-    let totalPrice=0
+    let totalPrice=0;
+    
     const renderedList=()=>{
-    //  console.log("props.cartItems",props.cartItems)
+  
      let arr=[]
             return(
                 props.cartItems.map((item)=>{             
                    arr=[...arr,item.data.price*item.quantity] 
                     const initialValue=0;
                      totalPrice=arr.reduce((accumulator,currentValue)=>accumulator+currentValue,initialValue);
-                    // console.log("item cart component",totalPrice,"---arr",arr)
+                   
                 return(
                 <div className="ui divided items" key={item.data.id}>
                 <div className="item">  
@@ -24,18 +24,20 @@ const CartDetails=(props)=>{
                 <img src={`${item.data.image}`}/>
                 </div>
                 <div className="content">
-                    <a className="header">{item.data.title}</a>
-                    <div className="meta">
+                <a className="header">{item.data.title}</a>
+                <div className="meta">
                         <span>Price:${item.data.price}</span>
                         {/* <span>Qty:{props.quantity.map((itemQty)=>item.data.id===itemQty.id?itemQty.quantity:item.quantity)}</span> */}
                         <span>Qty:{item.quantity}</span>
                        <span></span>
                         <div className="ui right floated mini input">
-                        <button className="ui pink  mini icon button" onClick={()=>props.decreaseQty(item.data.id,item.quantity)}>
+                        <button className="ui pink  mini icon button" onClick={()=>props.decreaseQty(item.data.id)}>
                         <i aria-hidden="true" className="minus icon"></i>
                         </button>
-                        <input type="text"  value={item.quantity}/>
-                        <button className="ui pink  mini icon button" onClick={()=>props.increaseQty(item.data.id,item.quantity)}>
+                        <input type="text" defaultValue={item.quantity} onChange={(event)=>{
+                            console.log("event",event.target.value)
+                            event.target.value=item.quantity}}/>
+                        <button className="ui pink  mini icon button" onClick={()=>props.increaseQty(item.data.id)}>
                         <i aria-hidden="true" className="add icon"></i>
                         </button>
                         </div>
@@ -89,14 +91,11 @@ const CartDetails=(props)=>{
     
 
 const mapStateToProps=(state)=>{
-    console.log("from cart component",state.setQty)
+    console.log("from cart component",state.addToCart)
      
     return{
-    cartItems:state.addToCart,
-    quantity:state.setQty,
-    // getUserCart:state.getUserCart
-    
-    }
+    cartItems:state.addToCart
+ }
 }
 
 export default connect(mapStateToProps,{getSingleProduct,increaseQty,decreaseQty})(CartDetails)
