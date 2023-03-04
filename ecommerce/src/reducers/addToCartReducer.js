@@ -34,11 +34,16 @@ export default (state=[],action)=>{
                 return newState1    
         
                 case 'DECREASE_QTY':
+                    // const newState2 = state.map(
+                    //     element=> element.data.id === action.payload ?  
+                    //     {"data": element.data, "quantity": element.quantity-1}: 
+                    //     {"data": element.data, "quantity": element.quantity})
+                    //     return newState2   
                     const newState2 = state.map(
-                        element=> element.data.id === action.payload ?  
+                        element=> (element.data.id === action.payload && element.quantity>0)?  
                         {"data": element.data, "quantity": element.quantity-1}: 
                         {"data": element.data, "quantity": element.quantity})
-                        return newState2   
+                        return newState2  
             // case 'RESET_STATE':
             //     console.log("reset state",state)
             //     return(
