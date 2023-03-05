@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
-import { getSingleCategory } from "../../actions";
 import ProductDescription from "./ProductDescription";
 import { useState } from "react";
 import Loader from "../Loader";
@@ -10,13 +9,21 @@ const SingleCategory=(props)=>{
    
     const [show,setShow] =useState(false)
     const [idx,setIdx]=useState(null)
-   
+    const [dropdownValue,setDropdownValue]=useState(false)
 
+    useEffect(()=>{
+        console.log("in useEffect")
+    },[dropdownValue])
     const handleModalState=(props)=>{
         // console.log(props)
         setShow(props)
     }
- 
+    
+    const sortByPrice=()=>{
+        console.log("in sort by price",props.singleCategory.data)
+        props.singleCategory.data.sort((a,b)=>a.price-b.price)
+        setDropdownValue(true)
+    }
     const renderedList=()=>{
         if(props.singleCategory){
             // props.singleCategory.forEach(element=>element["qty"]=qty)
@@ -59,11 +66,22 @@ const SingleCategory=(props)=>{
         return(
         
             <div>
+               
+                
                  <h1 className="main-header">{props.selectedCategory.toUpperCase()}</h1>
+                <div class="ui compact menu">
+                <div role="listbox" aria-expanded="false" class="ui item simple dropdown" tabindex="0">
+                <div aria-atomic="true" aria-live="polite" role="alert" class="divider text">Sort by</div>
+                <i aria-hidden="true" class="dropdown icon"></i><div class="menu transition">
+                <div style={{pointerEvents:"all"}} role="option" 
+                aria-checked="false" aria-selected="true" class="item" onClick={sortByPrice}>
+                <span class="text">Price</span></div>
+                <div style={{pointerEvents:"all"}} role="option" aria-checked="false" aria-selected="false" class="item">
+                <span class="text">Name</span></div>
+                </div></div></div>
                  <div className="ui relaxed three column  grid">
                  <div className="row" >
-                     
-                  {renderedList()}
+                 {renderedList()}
                   <ProductDescription show={show} handleModalState={handleModalState} productDescription={props.singleCategory.data[idx]}/>
      
                             </div>
@@ -79,7 +97,7 @@ const SingleCategory=(props)=>{
 
 }
 const mapStateToProps=(state)=>{
-console.log("from map state to props of single category",state.singleCategory)
+// console.log("from map state to props of single category",state.singleCategory)
 
 return{
     singleCategory:state.singleCategory
@@ -87,4 +105,4 @@ return{
 }
 
 
-export default connect(mapStateToProps,{getSingleCategory})(SingleCategory)
+export default connect(mapStateToProps)(SingleCategory)

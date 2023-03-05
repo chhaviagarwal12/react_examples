@@ -7,20 +7,18 @@ import { getSingleProduct,increaseQty,decreaseQty } from "../../actions"
 const CartDetails=(props)=>{
    
     let totalPrice=0;
-    const [qty,setQuantity]=useState()
-    const renderedList=()=>{
-        
+    const [count,setCount]=useState()
     const handleChange=(event)=>{
-      
-        setQuantity( event.target.value)
+        setCount(event.target.value)
     }
+    const renderedList=()=>{
      let arr=[]
             return(
                 props.cartItems.map((item)=>{             
                 arr=[...arr,item.data.price*item.quantity] 
                 const initialValue=0;
                 totalPrice=arr.reduce((accumulator,currentValue)=>accumulator+currentValue,initialValue);
-                console.log(qty)
+                
                 return(
                 <div className="ui divided items" key={item.data.id}>
                 <div className="item">  
@@ -30,11 +28,11 @@ const CartDetails=(props)=>{
                 <div className="content">
                 <a className="header">{item.data.title}</a>
                 <div className="meta">
-                        <span>Price:${item.data.price}</span>
+                    <span>Price:${item.data.price}</span>
                         {/* <span>Qty:{props.quantity.map((itemQty)=>item.data.id===itemQty.id?itemQty.quantity:item.quantity)}</span> */}
-                        <span>Qty:{item.quantity}</span>
-                        <span></span>
-                        <div className="ui right floated mini input">
+                    <span>Qty:{item.quantity}</span>
+                     
+                    <div className="ui right floated mini input">
                         <button className="ui pink  mini icon button" onClick={()=>props.decreaseQty(item.data.id)}>
                         <i aria-hidden="true" className="minus icon"></i>
                         </button>
@@ -52,7 +50,7 @@ const CartDetails=(props)=>{
             })
         )
     }
-    
+   
         return(
             <div>
                 <div className="ui vertical segment">
@@ -85,8 +83,8 @@ const CartDetails=(props)=>{
                           }}>PROCEED</button></td>
                           <td></td>
                         </tr>
-                                  </tbody>
-                                    </table>
+                        </tbody>
+                        </table>
                 </div>
         )}
     
@@ -97,5 +95,6 @@ const mapStateToProps=(state)=>{
     cartItems:state.addToCart
  }
 }
+
 
 export default connect(mapStateToProps,{getSingleProduct,increaseQty,decreaseQty})(CartDetails)
