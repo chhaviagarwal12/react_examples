@@ -5,7 +5,6 @@ import fakeStore from "../../apis/fakeStore"
 import { userDetails } from "../../actions";
 import { connect } from "react-redux";
 import {  useNavigate } from "react-router-dom";
-import Loader from "../Loader"
 import { userLogin,getSingleProduct } from "../../actions";
 
 

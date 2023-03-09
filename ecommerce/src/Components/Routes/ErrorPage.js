@@ -1,11 +1,11 @@
 import React from "react";
 import { useRouteError } from "react-router-dom";
 
-const ErrorPage = (location) => {
-    let error = useRouteError();
+const ErrorPage = () => {
+   
     return(
         <div>
-        <h2>No match found for {error.message}</h2>
+        <h2>No match found for the entered path </h2>
      </div>
     )
    

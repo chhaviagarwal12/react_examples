@@ -37,7 +37,7 @@ const Navigation=()=>{
             <Route path="/orders" element={<Orders/>}></Route>
            
             <Route path="/userprofile" element={<UserProfile/>}></Route>
-            <Route errorElement={<ErrorPage/>} />
+            <Route path="*" element={<ErrorPage/>} />
             </Routes>
           
             
