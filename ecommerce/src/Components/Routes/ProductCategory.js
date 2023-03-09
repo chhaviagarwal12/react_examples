@@ -26,7 +26,7 @@ const Products=(props)=>{
                         props.getSingleCategory(category)}
                     }>
                     <div className="ui image" id="products-image">
-                                            <img src={`images/${category}.jpg`} alt={`${category}`} id="categories-image"/>   
+                    <img src={`images/${category}.jpg`} alt={`${category}`} id="categories-image"/>   
                                             <div className="content">
                                                 <div className="header" id="products-header">
                                                  {category.toUpperCase()}

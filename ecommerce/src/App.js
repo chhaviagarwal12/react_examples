@@ -3,9 +3,15 @@ import 'semantic-ui-css/semantic.min.css'
 import Navigation from './Components/Navigation'
 import Header from './Components/HomePage/Header'
 import Footer from './Components/Footer'
-import {resetState} from './actions'
+
 
 class App extends React.Component{
+  componentDidMount(){
+    window.addEventListener('onload',()=>{
+      window.localStorage.clear()
+      
+      })
+  }
 render(){
   return(
     <div className='ui grid'>
@@ -26,11 +32,6 @@ render(){
 
 
 
-componentWillUnmount(){
-  document.addEventListener("unload",()=>{
-  window.localStorage.clear()
-  })
-  // this.props.resetState()
-}
+
 }
 export default App

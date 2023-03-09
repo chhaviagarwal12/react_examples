@@ -69,41 +69,14 @@ export const userLogin=(username,passwd)=>async dispatch=>{
   
 }
 //for adding items to cart
-// export const addToCart=(userId,date,product)=>async dispatch=>{
-//     // console.log("selected product action ",selectedProduct)
-//     const response=await fakeStore.post('/carts',{
-//         userId:userId,
-//         date:date,
-//         products:[product]
-//     })
-//     dispatch({
-//         type:"ADD_CART",
-//         payload:response.data
-//     })
-// }
 
-// export const addToCart=(selectedProduct)=>{
-//     return{
-//         type:'ADD_CART',
-//         payload:selectedProduct
-//     }
-// }
 export const addToCart=(selectedProduct,quantity)=>dispatch=>{
     dispatch({
         type:'ADD_CART',
         payload:{"data":selectedProduct,"quantity":quantity}
     })
 }
-//for getting cart details
-// export const getCartDetails=(userId)=>async dispatch=>{
-//     const response=await fakeStore.get(`/carts/${userId}`)
-//     console.log("from getCartDetails action creator",response.data)
-//     dispatch({
-//         type:'CART_DETAILS',
-//         // payload:{data:response.data,status:response.status}
-//         payload:response.data
-//     })
-// }
+
 
 export const increaseQty=(id)=>dispatch=>{
     dispatch({
@@ -129,10 +102,3 @@ export const addToWishlist=(selectedProduct)=>dispatch=>{
     })
 }
 
-export const resetState=()=>dispatch=>{
-    dispatch(
-        {
-            type:'RESET_STATE'
-        }
-    )
-}

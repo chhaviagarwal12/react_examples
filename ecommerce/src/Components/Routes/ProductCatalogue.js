@@ -74,7 +74,7 @@ const SingleCategory=(props)=>{
                 <div aria-atomic="true" aria-live="polite" role="alert" class="divider text">Sort by</div>
                 <i aria-hidden="true" class="dropdown icon"></i><div class="menu transition">
                 <div style={{pointerEvents:"all"}} role="option" 
-                aria-checked="false" aria-selected="true" class="item" onClick={sortByPrice}>
+                aria-checked="false" aria-selected="true" class="item" >
                 <span class="text">Price</span></div>
                 <div style={{pointerEvents:"all"}} role="option" aria-checked="false" aria-selected="false" class="item">
                 <span class="text">Name</span></div>

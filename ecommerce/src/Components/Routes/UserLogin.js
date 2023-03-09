@@ -13,18 +13,20 @@ const UserLogin=(props)=>{
 
     const [username,setUsername]=useState("")
     const [passwd,setPassword]=useState("")
+    const [responseStatus,setResponseStatus]=useState(null)
    const [userId,setUserId]=useState(0)
    const ref=useRef()
    const navigate=useNavigate()
  
    useEffect(()=>{
       if(props.getUserCart){
-         console.log("props.getUserCart",props.getUserCart)
+         // console.log("props.getUserCart",props.getUserCart)
          for(let idx of props.getUserCart.products ){
              props.getSingleProduct(idx.productId,idx.quantity)
                            
               } 
      }
+     
    },[userId])
    async  function userLoginRequest(){
                   await props.userLogin(username,passwd)
@@ -35,7 +37,7 @@ const UserLogin=(props)=>{
    const getUserList=async()=>{
       try{
          const response=await fakeStore.get('/users')
-         // setResponseStatus(response.status) 
+         setResponseStatus(response.status) 
          // console.log("from get user list function response",response)
          for(const userdata of response.data) {
             if(Object.is(username,userdata.username)) {
@@ -120,10 +122,11 @@ const getCartDetails=async(userId)=>{
                </div>
                 
                <div className="ui field">
+                  
                <Button ref={ref} type="submit" color="pink"  onClick={(event)=>{
                   handleSubmit(event)
                   userLoginRequest()
-                  }}>SUBMIT</Button>
+                   }}>SUBMIT</Button>
                   {/* {(responseStatus===200)?<div></div>:<Loader/>} */}
                </div>
                  

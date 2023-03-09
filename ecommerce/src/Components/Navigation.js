@@ -11,6 +11,7 @@ import HomeImage from './HomePage/HomeImage'
 import UserProfile from './Routes/UserProfile'
 import { useState } from 'react'
 import SingleCategory from './Routes/ProductCatalogue'
+import ErrorPage from './Routes/ErrorPage'
 
 
 // export const SelectedProductContext=createContext()
@@ -24,6 +25,7 @@ const Navigation=()=>{
   
     return(
         <div>
+           
             <Routes>
              <Route path="/" element={<HomeImage/>}/>   
             <Route path="/products"  element={<Products returnCategory={setCategoryCallback}/>}></Route>
@@ -35,7 +37,10 @@ const Navigation=()=>{
             <Route path="/orders" element={<Orders/>}></Route>
            
             <Route path="/userprofile" element={<UserProfile/>}></Route>
+            <Route errorElement={<ErrorPage/>} />
             </Routes>
+          
+            
        
         </div>
         
