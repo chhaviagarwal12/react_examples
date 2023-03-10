@@ -19,17 +19,13 @@ const SingleCategory=(props)=>{
         setShow(props)
     }
     
-    const sortByPrice=()=>{
-        console.log("in sort by price",props.singleCategory.data)
-        props.singleCategory.data.sort((a,b)=>a.price-b.price)
-        setDropdownValue(true)
-    }
+
     const renderedList=()=>{
         if(props.singleCategory){
             // props.singleCategory.forEach(element=>element["qty"]=qty)
             return props.singleCategory.data.map((product,index)=>{
                 return(
-                    <div className="ui raised pink card" id="category-card"key={`${product.id}`} onClick={()=>{
+                    <div className="ui raised pink card" id="category-card" key={`${product.id}`} onClick={()=>{
                         setShow(!show);
                         setIdx(index);
                     } }>
@@ -69,16 +65,7 @@ const SingleCategory=(props)=>{
                
                 
                  <h1 className="main-header">{props.selectedCategory.toUpperCase()}</h1>
-                <div class="ui compact menu">
-                <div role="listbox" aria-expanded="false" class="ui item simple dropdown" tabindex="0">
-                <div aria-atomic="true" aria-live="polite" role="alert" class="divider text">Sort by</div>
-                <i aria-hidden="true" class="dropdown icon"></i><div class="menu transition">
-                <div style={{pointerEvents:"all"}} role="option" 
-                aria-checked="false" aria-selected="true" class="item" >
-                <span class="text">Price</span></div>
-                <div style={{pointerEvents:"all"}} role="option" aria-checked="false" aria-selected="false" class="item">
-                <span class="text">Name</span></div>
-                </div></div></div>
+               
                  <div className="ui relaxed three column  grid">
                  <div className="row" >
                  {renderedList()}

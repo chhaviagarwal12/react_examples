@@ -133,3 +133,12 @@
 td {
   border: none;
 }
+
+#wishlisted-img{
+  justify-content: center;
+  height: 300px;
+}
+#wishlisted-btn{
+  justify-content: center;
+ 
+}

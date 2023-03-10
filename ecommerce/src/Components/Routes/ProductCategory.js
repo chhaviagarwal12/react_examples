@@ -21,17 +21,17 @@ const Products=(props)=>{
                    
                         //    <div className="ui eight wide column" key={category}>
                              <Link to={`/${category}`} id="product-category">
-                    <div className="ui pink card" id="products-card" key={category} onClick={()=>{
+                    <div className="ui pink card" id="products-card" key={`${category}`} onClick={()=>{
                     props.returnCategory(category) //this function is changing url,callback function
                         props.getSingleCategory(category)}
                     }>
                     <div className="ui image" id="products-image">
                     <img src={`images/${category}.jpg`} alt={`${category}`} id="categories-image"/>   
-                                            <div className="content">
-                                                <div className="header" id="products-header">
-                                                 {category.toUpperCase()}
-                                                </div>
-                                                </div>                               
+                    <div className="content">
+                    <div className="header" id="products-header">
+                        {category.toUpperCase()}
+                    </div>
+                    </div>                               
                                 </div>
                     </div>
                     </Link>

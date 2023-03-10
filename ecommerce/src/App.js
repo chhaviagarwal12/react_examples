@@ -15,18 +15,22 @@ class App extends React.Component{
 render(){
   return(
     <div className='ui grid'>
-      <div className='row'>
+      <div className='row' id="top-row">
       <Header/>
       </div>
-      <div className='row'>
+      <div className='row' id="center-row">
       <div className='ui container'>
        <Navigation/> 
       </div>
       </div>
-      <div className='row'>
+      <div className='row' id="bottom-row">
+     
         <Footer/>
+      
+       
       </div>
     </div>
+    
   ) 
 }
 
