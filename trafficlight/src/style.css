@@ -1,0 +1,112 @@
+:root{
+  --background-red-light1:red;
+  --background-yellow-light1:yellow;
+  --background-green-light1:green;
+  --background-red-light2:red;
+  --background-yellow-light2:yellow;
+  --background-green-light2:green;
+  --background-red-light3:red;
+  --background-yellow-light3:yellow;
+  --background-green-light3:green;
+  --background-red-light4:red;
+  --background-yellow-light4:yellow;
+  --background-green-light4:green;
+  --background-red-light:red;
+  --background-yellow-light:yellow;
+  --background-green-light:green;
+}
+
+  
+  .trafficlight{
+    background: #222;
+    background-image: linear-gradient(transparent 2%, #111 2%, transparent 3%, #111 30%);
+    width: 120px;
+    height: 350px;
+    border-radius: 20px;
+    position: relative;
+    border: solid 5px #333;
+  }
+  
+  
+  .red{
+    background-size: 5px 5px; 
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 35px;
+    border: dotted 2px red;
+    box-shadow: 
+      0 0 20px #111 inset,
+      0 0 10px red;
+  }
+  
+  .yellow{
+    background-size: 5px 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: dotted 2px yellow;
+    position: absolute;
+    top: 145px;
+    left: 35px;
+    box-shadow: 
+      0 0 20px #111 inset,
+      0 0 10px yellow;
+  }
+  
+  .green{
+    background-size: 5px 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: dotted 2px lime;
+    position: absolute;
+    top: 270px;
+    left: 35px;
+    box-shadow: 
+      0 0 20px #111 inset,
+      0 0 10px lime;
+     }
+  
+  /* #trafficLight1 .red{
+    background: var(--background-red-light);
+  } */
+  /* #trafficLight1 .yellow{
+    background: var(--background-yellow-light);
+  }
+  #trafficLight1 .green{
+    background:var(--background-green-light);
+  }
+
+  #trafficLight2 .red{
+    background: var(--background-red-light);
+  }
+  #trafficLight2 .yellow{
+    background: var(--background-yellow-light);
+  }
+  #trafficLight2 .green{
+    background:var(--background-green-light);
+  }
+
+  #trafficLight3 .red{
+    background: var(--background-red-light);
+  }
+  #trafficLight3 .yellow{
+    background: var(--background-yellow-light);
+  }
+  #trafficLight3 .green{
+    background:var(--background-green-light);
+  }
+
+  #trafficLight4 .red{
+    background: var(--background-red-light);
+  }
+  #trafficLight4 .yellow{
+    background: var(--background-yellow-light);
+  }
+  #trafficLight4 .green{
+    background:var(--background-green-light);
+  }
+  */
