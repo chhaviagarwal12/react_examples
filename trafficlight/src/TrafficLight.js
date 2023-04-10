@@ -11,6 +11,31 @@ class TrafficLight extends React.Component{
     }
     componentDidUpdate(){
         this.setLightColor()
+        this.changeColorOfTrafficLights
+        .then(()=>{
+            return this.changeColorOfTrafficLights(30000,1,'yellow')
+        })
+        .then(()=>{
+            return this.changeColorOfTrafficLights(5000,1,'red') //tf2 will be green
+        })
+        .then(()=>{
+            return this.changeColorOfTrafficLights(30000,2,'yellow')
+        })
+        .then(()=>{
+            return this.changeColorOfTrafficLights(5000,2,'red') //tf3 will be green
+        })
+        .then(()=>{
+            return this.changeColorOfTrafficLights(30000,3,'yellow')
+        })
+        .then(()=>{
+            return this.changeColorOfTrafficLights(5000,3,'red') //tf4 will be green
+        })
+        .then(()=>{
+            return this.changeColorOfTrafficLights(30000,4,'yellow')
+        })
+        .then(()=>{
+            return this.changeColorOfTrafficLights(5000,4,'red') //tf1 will be green
+        })
         // this.setTrafficLight()
         // if(this.state.greenLightOn && this.state.timer === lightCycle/1000){
         //     this.greenLight()
@@ -21,7 +46,17 @@ class TrafficLight extends React.Component{
         //   },lightCycle) 
         // }  
     }
+    changeColorOfTrafficLights=(duration,number,color)=>{
+        return new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                this.props.setColor(number,color)
+                this.setLightColor()
+            },duration)
+        })
 
+    }
+
+    
     setLightColor(){
         this.props.setColorObject.map((item)=>{
             
