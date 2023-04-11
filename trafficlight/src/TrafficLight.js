@@ -4,38 +4,24 @@ import {connect} from 'react-redux'
 
 
 
-let lightCycle=10000,timerId;
+let lightCycle=10000,timerId,lightCycleYellow=5000;
 class TrafficLight extends React.Component{
+
     state={greenLightOn:false, timer:lightCycle/1000}
-    componentDidMount(){
-    }
+
+  componentDidMount(){
+      this.startTrafficLightCycle()
+      
+      const duration=4*(lightCycle+lightCycleYellow)
+      setInterval(()=>{
+        this.startTrafficLightCycle()
+      },duration)
+  }
     componentDidUpdate(){
+        
         this.setLightColor()
-        this.changeColorOfTrafficLights
-        .then(()=>{
-            return this.changeColorOfTrafficLights(30000,1,'yellow')
-        })
-        .then(()=>{
-            return this.changeColorOfTrafficLights(5000,1,'red') //tf2 will be green
-        })
-        .then(()=>{
-            return this.changeColorOfTrafficLights(30000,2,'yellow')
-        })
-        .then(()=>{
-            return this.changeColorOfTrafficLights(5000,2,'red') //tf3 will be green
-        })
-        .then(()=>{
-            return this.changeColorOfTrafficLights(30000,3,'yellow')
-        })
-        .then(()=>{
-            return this.changeColorOfTrafficLights(5000,3,'red') //tf4 will be green
-        })
-        .then(()=>{
-            return this.changeColorOfTrafficLights(30000,4,'yellow')
-        })
-        .then(()=>{
-            return this.changeColorOfTrafficLights(5000,4,'red') //tf1 will be green
-        })
+       
+      
         // this.setTrafficLight()
         // if(this.state.greenLightOn && this.state.timer === lightCycle/1000){
         //     this.greenLight()
@@ -50,18 +36,53 @@ class TrafficLight extends React.Component{
         return new Promise((resolve,reject)=>{
             setTimeout(()=>{
                 this.props.setColor(number,color)
-                this.setLightColor()
+                resolve('done')
+                // this.setLightColor()   
             },duration)
+         
         })
+}
 
-    }
+startTrafficLightCycle(){
+    
+    this.changeColorOfTrafficLights(lightCycle,1,'yellow')
+    .then(()=>{
+        
+       return Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,1,'red'),
+        this.changeColorOfTrafficLights(lightCycleYellow,2,'green')])
+      
+         //tf2 will be green
+    })
+    .then(()=>{
+        return this.changeColorOfTrafficLights(lightCycle,2,'yellow')
+    })
+    .then(()=>{
+        return Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,2,'red'),
+        this.changeColorOfTrafficLights(lightCycleYellow,3,'green')]) //tf3 will be green
+    })
+    .then(()=>{
+        return this.changeColorOfTrafficLights(lightCycle,3,'yellow')
+    })
+    .then(()=>{
+        return Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,3,'red'),
+        this.changeColorOfTrafficLights(lightCycleYellow,4,'green')]) //tf4 will be green
+    })
+    .then(()=>{
+        return this.changeColorOfTrafficLights(lightCycle,4,'yellow')
+    })
+    .then(()=>{
+        return Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,4,'red'),
+        this.changeColorOfTrafficLights(lightCycleYellow,1,'green')]) //tf1 will be green
+    })
+    .catch((error)=>console.log(error))
+}
 
     
     setLightColor(){
         this.props.setColorObject.map((item)=>{
             
                 if(item.id===1){
-                    console.log(item.color,item.id)
+                   
                     const trafficlight1=document.getElementById("trafficLight1")
                     switch(item.color){
                         case 'red':
@@ -171,33 +192,7 @@ class TrafficLight extends React.Component{
         })
        
     }
-    // redLight(){
-    //     this.startTimer()
-    //     this.setColor("--background-yellow-light","black")
-    //     this.setColor("--background-red-light","red")
-    //     this.setColor("--background-green-light","black")
-    //     setTimeout(()=>{
-    //       this.stopTimer()
-    //       this.setState({greenLightOn:true})
-    //     },lightCycle)
-    // }
-  
-    // yellowLight(){
-    //         this.setColor("--background-yellow-light","yellow")
-    //         this.setColor("--background-red-light","black")
-    //         this.setColor("--background-green-light","black")
-    //     setTimeout(()=>{
-    //         this.redLight()
-    //         },5000) 
-    // }
-  
-    // greenLight(){
-    //         this.setColor("--background-yellow-light","black")
-    //         this.setColor("--background-red-light","black")
-    //         this.setColor("--background-green-light",'green')
-    //         this.startTimer();
-    //       }
-    startTimer(){
+      startTimer(){
         timerId=setInterval(()=>{
               this.setState({timer:this.state.timer-1})
           },1000)
@@ -207,21 +202,12 @@ class TrafficLight extends React.Component{
             clearInterval(timerId)
             this.setState({timer:lightCycle/1000})
         }
-        // setTrafficLight(){
-        //     if(this.props.number===this.props.trafficLightID){
-        //         // console.log("in set traffic light",this.props.number,this.props.trafficLightID,this.props.activeStatus)
-        //         if(this.props.activeStatus){
-        //             this.greenLight()
-        //             console.log("show:",this.props.number,this.props.trafficLightID,this.props.activeStatus) 
-        //         }
-        //     }
-        // }
         render(){
         return(
         <div>
         <label>Timer</label>
-        <input className="input is-primary" type="text" readOnly value={this.state.timer}></input>
-        <div className="trafficlight" id={`trafficLight${this.props.number}`}  ref={this.trafficLightRef} >
+        <input className="input is-primary" type="text" readOnly value={this.state.timer} id={this.props.number}></input>
+        <div className="trafficlight" id={`trafficLight${this.props.number}`} >
         <div className="red"></div>
         <div className="yellow"></div>
         <div className="green"></div>
@@ -232,7 +218,7 @@ class TrafficLight extends React.Component{
     }
 
     const mapStateToProps=(state)=>{
-        console.log(state.setColor)
+        // console.log(state.setColor)
         return{
             setColorObject:state.setColor
         }
