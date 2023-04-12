@@ -1,36 +1,29 @@
 import React from "react";
-import {setColor} from './actions'
+import {setColor,startTimer,stopTimer} from './actions'
 import {connect} from 'react-redux'
 
 
 
-let lightCycle=10000,timerId,lightCycleYellow=5000;
+let lightCycle=10000,lightCycleYellow=5000;
+const initTimer1=(lightCycle/1000),initTimer2=initTimer1+lightCycleYellow/1000,initTimer3=initTimer2+15,initTimer4=initTimer3+15;
 class TrafficLight extends React.Component{
 
     state={greenLightOn:false, timer:lightCycle/1000}
 
   componentDidMount(){
       this.startTrafficLightCycle()
-      
+      this.setTimerValue()
+      this.props.startTimer(1,initTimer1);//start timer for traffic light 1
+      this.props.startTimer(2,initTimer2);
+      this.props.startTimer(3,initTimer3);
+      this.props.startTimer(4,initTimer4);
       const duration=4*(lightCycle+lightCycleYellow)
       setInterval(()=>{
         this.startTrafficLightCycle()
       },duration)
   }
     componentDidUpdate(){
-        
         this.setLightColor()
-       
-      
-        // this.setTrafficLight()
-        // if(this.state.greenLightOn && this.state.timer === lightCycle/1000){
-        //     this.greenLight()
-        //     setTimeout(()=>{
-        //       this.setState({greenLightOn:false})
-        //       this.stopTimer()
-        //       this.yellowLight()
-        //   },lightCycle) 
-        // }  
     }
     changeColorOfTrafficLights=(duration,number,color)=>{
         return new Promise((resolve,reject)=>{
@@ -39,50 +32,67 @@ class TrafficLight extends React.Component{
                 resolve('done')
                 // this.setLightColor()   
             },duration)
-         
         })
 }
 
 startTrafficLightCycle(){
-    
     this.changeColorOfTrafficLights(lightCycle,1,'yellow')
     .then(()=>{
-        
-       return Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,1,'red'),
+        this.props.stopTimer(1);//stop timer for traffic light 1
+        const promise=Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,1,'red'),
         this.changeColorOfTrafficLights(lightCycleYellow,2,'green')])
-      
-         //tf2 will be green
+        this.props.startTimer(1,initTimer4);
+        this.props.stopTimer(2)
+        this.props.startTimer(2,initTimer1);
+        return promise
+          })
+    .then(()=>{
+        const promise=this.changeColorOfTrafficLights(lightCycle,2,'yellow')
+        return promise
     })
     .then(()=>{
-        return this.changeColorOfTrafficLights(lightCycle,2,'yellow')
-    })
-    .then(()=>{
-        return Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,2,'red'),
+        this.props.stopTimer(2)
+        const promise=Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,2,'red'),
         this.changeColorOfTrafficLights(lightCycleYellow,3,'green')]) //tf3 will be green
+        this.props.startTimer(2,initTimer4);
+        this.props.stopTimer(3)
+        this.props.startTimer(3,initTimer1);
+        return promise
     })
     .then(()=>{
         return this.changeColorOfTrafficLights(lightCycle,3,'yellow')
     })
     .then(()=>{
-        return Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,3,'red'),
+        this.props.stopTimer(3)
+        const promise=Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,3,'red'),
         this.changeColorOfTrafficLights(lightCycleYellow,4,'green')]) //tf4 will be green
+        this.props.startTimer(3,initTimer4);
+        this.props.stopTimer(4)
+        this.props.startTimer(4,initTimer1);
+        return promise
     })
     .then(()=>{
         return this.changeColorOfTrafficLights(lightCycle,4,'yellow')
     })
     .then(()=>{
-        return Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,4,'red'),
+        this.props.stopTimer(4)
+        const promise=Promise.all([this.changeColorOfTrafficLights(lightCycleYellow,4,'red'),
         this.changeColorOfTrafficLights(lightCycleYellow,1,'green')]) //tf1 will be green
+        this.props.startTimer(4,initTimer4);
+        this.props.stopTimer(1)
+        this.props.startTimer(1,initTimer1);
+        return promise
     })
     .catch((error)=>console.log(error))
 }
-
-    
+    setTimerValue(){
+        const timer1=document.getElementById(1)
+        timer1.value=initTimer1
+    }
     setLightColor(){
         this.props.setColorObject.map((item)=>{
             
                 if(item.id===1){
-                   
                     const trafficlight1=document.getElementById("trafficLight1")
                     switch(item.color){
                         case 'red':
@@ -105,7 +115,6 @@ startTrafficLightCycle(){
                         trafficlight1.childNodes[1].style.background="black" ;
                         trafficlight1.childNodes[2].style.background="black" ;
                         break; 
-                       
                     }
                 }
                 else if(item.id===2){
@@ -131,10 +140,8 @@ startTrafficLightCycle(){
                         trafficlight2.childNodes[0].style.background="black" ;
                         trafficlight2.childNodes[1].style.background="black" ;
                         trafficlight2.childNodes[2].style.background="black" ;
-                        break; 
-                         
+                        break;  
                     }
-                    
                 }
                 else if(item.id===3){
                     const trafficlight3=document.getElementById("trafficLight3")
@@ -158,8 +165,7 @@ startTrafficLightCycle(){
                         trafficlight3.childNodes[0].style.background="black" ;
                         trafficlight3.childNodes[1].style.background="black" ;
                         trafficlight3.childNodes[2].style.background="black" ;
-                        break; 
-                         
+                        break;    
                     }
                 }
                 else if(item.id===4){
@@ -184,29 +190,19 @@ startTrafficLightCycle(){
                         trafficlight4.childNodes[0].style.background="black" ;
                         trafficlight4.childNodes[1].style.background="black" ;
                         trafficlight4.childNodes[2].style.background="black" ;
-                        break; 
-                       
+                        break;  
                     }
                 }   
             
         })
        
     }
-      startTimer(){
-        timerId=setInterval(()=>{
-              this.setState({timer:this.state.timer-1})
-          },1000)
-        }
-      
-        stopTimer(){
-            clearInterval(timerId)
-            this.setState({timer:lightCycle/1000})
-        }
+
         render(){
         return(
         <div>
         <label>Timer</label>
-        <input className="input is-primary" type="text" readOnly value={this.state.timer} id={this.props.number}></input>
+        <input className="input is-primary" type="text" readOnly  id={this.props.number}></input>
         <div className="trafficlight" id={`trafficLight${this.props.number}`} >
         <div className="red"></div>
         <div className="yellow"></div>
@@ -218,9 +214,10 @@ startTrafficLightCycle(){
     }
 
     const mapStateToProps=(state)=>{
-        // console.log(state.setColor)
+      console.log(state.setTimer)
         return{
-            setColorObject:state.setColor
+            setColorObject:state.setColor,
+            setTimerObject:state.setTimer
         }
     }
-    export default connect(mapStateToProps,{setColor})(TrafficLight)
+    export default connect(mapStateToProps,{setColor,startTimer,stopTimer})(TrafficLight)

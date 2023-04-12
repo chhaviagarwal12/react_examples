@@ -9,6 +9,7 @@ export const setColor=(id,color)=>(dispatch)=>{
 
 
    export const startTimer=(id,time)=>(dispatch)=>{
+      // console.log("from actions",id,time)
       dispatch({
          type:'START_TIMER',
          payload:{'id':id,'time':time}

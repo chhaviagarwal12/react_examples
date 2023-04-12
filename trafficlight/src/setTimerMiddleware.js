@@ -6,9 +6,11 @@ export const setTimerMiddleware=store=>{
         switch(action.type){
             case 'START_TIMER':
                 intervalId=setInterval(()=>{
+                    const timeLeft=action.payload.time
+                    timeLeft-=1
                     store.dispatch({
                         type:'START_TIMER',
-                        payload:action.payload
+                        payload:{'id':action.payload.id,'time':timeLeft}
                     })
                 },1000);
                 break;
