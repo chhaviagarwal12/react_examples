@@ -1,11 +1,13 @@
-import {startTimer,stopTimer} from './actions'
 
-export const setTimerMiddleware=store=>{
+
+export const setTimerMiddleware=store=>next=>action=>{
+    console.log("in reducer middleware")
     let intervalId=null;
-    return next=>action=>{
+    // return next=>action=>{
         switch(action.type){
             case 'START_TIMER':
                 intervalId=setInterval(()=>{
+                    console.log("in reducer middleware",action.payload.time)
                     const timeLeft=action.payload.time
                     timeLeft-=1
                     store.dispatch({
@@ -19,6 +21,6 @@ export const setTimerMiddleware=store=>{
         }
         return next(action)
         
-    }
+    // }
 
 }

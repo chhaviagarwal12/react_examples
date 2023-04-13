@@ -13,10 +13,7 @@ class TrafficLight extends React.Component{
   componentDidMount(){
       this.startTrafficLightCycle()
       this.setTimerValue()
-      this.props.startTimer(1,initTimer1);//start timer for traffic light 1
-      this.props.startTimer(2,initTimer2);
-      this.props.startTimer(3,initTimer3);
-      this.props.startTimer(4,initTimer4);
+     
       const duration=4*(lightCycle+lightCycleYellow)
       setInterval(()=>{
         this.startTrafficLightCycle()
@@ -24,6 +21,7 @@ class TrafficLight extends React.Component{
   }
     componentDidUpdate(){
         this.setLightColor()
+        this.setTimerValue()
     }
     changeColorOfTrafficLights=(duration,number,color)=>{
         return new Promise((resolve,reject)=>{
@@ -86,12 +84,39 @@ startTrafficLightCycle(){
     .catch((error)=>console.log(error))
 }
     setTimerValue(){
-        const timer1=document.getElementById(1)
-        timer1.value=initTimer1
+     
+        
+            if(this.props.setTimerObject!==undefined){
+                this.props.setTimerObject.map((item)=>{
+                    if( item.id===1)
+                    {
+                        const timer=document.getElementById(1)
+                        timer.value= item.time
+                    }
+                    else if( item.id===2)
+                    {
+                        const timer=document.getElementById(2)
+                        timer.value= item.time
+                    }
+                    else if( item.id===3)
+                    {
+                        const timer=document.getElementById(3)
+                        timer.value= item.time
+                    }
+                    else if( item.id===4)
+                    {
+                        const timer=document.getElementById(4)
+                        timer.value= item.time
+                    }
+                })   
+            }
+            
+        
+       
     }
     setLightColor(){
         this.props.setColorObject.map((item)=>{
-            
+           
                 if(item.id===1){
                     const trafficlight1=document.getElementById("trafficLight1")
                     switch(item.color){
@@ -214,7 +239,7 @@ startTrafficLightCycle(){
     }
 
     const mapStateToProps=(state)=>{
-      console.log(state.setTimer)
+    //   console.log(state.setTimer)
         return{
             setColorObject:state.setColor,
             setTimerObject:state.setTimer
