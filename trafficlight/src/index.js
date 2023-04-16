@@ -16,5 +16,6 @@ root.render(
 
  
 );
+// console.log(store.getState())
 
 

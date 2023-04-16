@@ -1,5 +1,5 @@
 
-
+const timerId=null;
 export const setColor=(id,color)=>(dispatch)=>{
     dispatch({
        type:'SET_COLOR',
@@ -8,17 +8,12 @@ export const setColor=(id,color)=>(dispatch)=>{
    }
 
 
-   export const startTimer=(id,time)=>(dispatch)=>{
-      // console.log("from actions",id,time)
-      dispatch({
+   export const startTimer=(id,time)=>(dispatch)=>({
          type:'START_TIMER',
          payload:{'id':id,'time':time}
-      })
-   }
+   })
 
-   export const stopTimer=(id)=>(dispatch)=>{
-      dispatch({
+   export const stopTimer=(id)=>({
          type:'STOP_TIMER',
          payload:{'id':id}
-      })
-   }
+   })

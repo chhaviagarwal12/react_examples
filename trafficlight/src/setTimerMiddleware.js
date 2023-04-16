@@ -1,14 +1,14 @@
 
 
-export const setTimerMiddleware=store=>next=>action=>{
-    console.log("in reducer middleware")
+export const setTimerMiddleware=store=>{
+    console.log("in reducer middleware",store.getState())
     let intervalId=null;
-    // return next=>action=>{
+    return next=>action=>{
         switch(action.type){
             case 'START_TIMER':
                 intervalId=setInterval(()=>{
                     console.log("in reducer middleware",action.payload.time)
-                    const timeLeft=action.payload.time
+                    let timeLeft=action.payload.time
                     timeLeft-=1
                     store.dispatch({
                         type:'START_TIMER',
@@ -21,6 +21,6 @@ export const setTimerMiddleware=store=>next=>action=>{
         }
         return next(action)
         
-    // }
+    }
 
 }
