@@ -4,11 +4,11 @@ import App from './App';
 import { Provider } from "react-redux";
 import { applyMiddleware, configureStore } from '@reduxjs/toolkit'
 import reducers from './reducers'
-import {setTimerMiddleware} from './setTimerMiddleware'
+import timerMiddleware from 'redux-timer'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store=configureStore({reducer:reducers},applyMiddleware(setTimerMiddleware))
+const store=configureStore({reducer:reducers},applyMiddleware(timerMiddleware))
 root.render(
   <Provider store={store}>
         <App />

@@ -1,5 +1,5 @@
+import {START_TIMER,STOP_TIMER} from 'redux-timer'
 
-const timerId=null;
 export const setColor=(id,color)=>(dispatch)=>{
     dispatch({
        type:'SET_COLOR',
@@ -8,12 +8,30 @@ export const setColor=(id,color)=>(dispatch)=>{
    }
 
 
-   export const startTimer=(id,time)=>(dispatch)=>({
-         type:'START_TIMER',
-         payload:{'id':id,'time':time}
-   })
+// export const startTimer=(id,time)=>{
+//         return{
+//             type:'START_TIMER',
+//             payload:{
+//                   name:'startTrafficLightTimer',
+//                   action:'START_TIMER_ACTION',
+//                   'id':id,
+//                   interval:time,
+//             }
+//         }
+// }
+export const startTimer=(id,time)=>{
+      return{
+          type:'START_TIMER',
+          payload:{
+                
+                'id':id,
+                'time':time,
+          }
+      }
+}
 
-   export const stopTimer=(id)=>({
+export const stopTimer=(id)=>(dispatch)=>
+   dispatch({
          type:'STOP_TIMER',
-         payload:{'id':id}
+         payload:{name:"stopTrafficLightTimer"}
    })

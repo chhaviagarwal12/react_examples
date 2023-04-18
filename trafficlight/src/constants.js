@@ -1,0 +1,7 @@
+export const LIGHT_CYCLE=10000;
+export const LIGHT_CYCLE_YELLOW=5000;
+export const INIT_TIMER_1=LIGHT_CYCLE/1000;
+export const INIT_TIMER_2=INIT_TIMER_1+LIGHT_CYCLE_YELLOW/1000;
+export const INIT_TIMER_3=2*(INIT_TIMER_2);
+export const INIT_TIMER_4=2*(INIT_TIMER_3);
+
