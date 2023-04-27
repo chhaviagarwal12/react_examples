@@ -2,37 +2,26 @@ import React from "react";
 import {setColor} from './actions'
 import {connect} from 'react-redux'
 import {LIGHT_CYCLE,LIGHT_CYCLE_YELLOW,INIT_TIMER_1,INIT_TIMER_2,INIT_TIMER_3,INIT_TIMER_4} from './constants'
-import Timer from './Timer'
 
-let startTimer,stopTimer
+
+
 class TrafficLight extends React.Component{
 
-    componentDidMount(){
+    
+componentDidMount(){
+   
       this.startTrafficLightCycle()
-      startTimer(1,INIT_TIMER_1)
-      startTimer(2,INIT_TIMER_2)
-      startTimer(3,INIT_TIMER_3)
-      startTimer(4,INIT_TIMER_4)
-      
       const duration=4*(LIGHT_CYCLE+LIGHT_CYCLE_YELLOW)
       setInterval(()=>{
         this.startTrafficLightCycle()
       },duration)
     }
-    componentDidUpdate(){
+componentDidUpdate(){
         this.setLightColor()
-        //  this.startTimer()
+        console.log(this.props) 
     }
 
-    handleStartTimer=(func)=>{
-        console.log(func)
-        startTimer=func
-    }
-    
-      handleStopTimer=(func)=>{
-        console.log(func)
-        stopTimer=func
-      }
+  
     changeColorOfTrafficLights=(duration,number,color)=>{
         return new Promise((resolve,reject)=>{
             setTimeout(()=>{
@@ -46,12 +35,13 @@ class TrafficLight extends React.Component{
 startTrafficLightCycle(){
     this.changeColorOfTrafficLights(LIGHT_CYCLE,1,'yellow')
     .then(()=>{
-        stopTimer(1,INIT_TIMER_4);//stop timer for traffic light 1
+        this.props.stopTimer(1,INIT_TIMER_4);
         const promise=Promise.all([this.changeColorOfTrafficLights(LIGHT_CYCLE_YELLOW,1,'red'),
         this.changeColorOfTrafficLights(LIGHT_CYCLE_YELLOW,2,'green')])
-        startTimer(1,INIT_TIMER_4);
-        stopTimer(2,INIT_TIMER_1)
-        startTimer(2,INIT_TIMER_1);
+       //stop timer for traffic light 1
+        this.props.startTimer(1,INIT_TIMER_4);
+        this.props.stopTimer(2,INIT_TIMER_1);
+        this.props.startTimer(2,INIT_TIMER_1);
         return promise
           })
     .then(()=>{
@@ -59,36 +49,36 @@ startTrafficLightCycle(){
         return promise
     })
     .then(()=>{
-        stopTimer(2,INIT_TIMER_4)
+        this.props.stopTimer(2,INIT_TIMER_4)
         const promise=Promise.all([this.changeColorOfTrafficLights(LIGHT_CYCLE_YELLOW,2,'red'),
         this.changeColorOfTrafficLights(LIGHT_CYCLE_YELLOW,3,'green')]) //tf3 will be green
-        startTimer(2,INIT_TIMER_4);
-        stopTimer(3,INIT_TIMER_1)
-        startTimer(3,INIT_TIMER_1);
+        this.props.startTimer(2,INIT_TIMER_4);
+        this.props.stopTimer(3,INIT_TIMER_1);
+        this.props.startTimer(3,INIT_TIMER_1);
         return promise
     })
     .then(()=>{
         return this.changeColorOfTrafficLights(LIGHT_CYCLE,3,'yellow')
     })
     .then(()=>{
-        stopTimer(3,INIT_TIMER_4)
+        this.props.stopTimer(3,INIT_TIMER_4)
         const promise=Promise.all([this.changeColorOfTrafficLights(LIGHT_CYCLE_YELLOW,3,'red'),
         this.changeColorOfTrafficLights(LIGHT_CYCLE_YELLOW,4,'green')]) //tf4 will be green
-        startTimer(3,INIT_TIMER_4);
-        stopTimer(4,INIT_TIMER_1)
-        startTimer(4,INIT_TIMER_1);
+        this.props.startTimer(3,INIT_TIMER_4);
+        this.props.stopTimer(4,INIT_TIMER_1);
+        this.props.startTimer(4,INIT_TIMER_1);
         return promise
     })
     .then(()=>{
         return this.changeColorOfTrafficLights(LIGHT_CYCLE,4,'yellow')
     })
     .then(()=>{
-        stopTimer(4,INIT_TIMER_4)
+        this.props.stopTimer(4,INIT_TIMER_4)
         const promise=Promise.all([this.changeColorOfTrafficLights(LIGHT_CYCLE_YELLOW,4,'red'),
         this.changeColorOfTrafficLights(LIGHT_CYCLE_YELLOW,1,'green')]) //tf1 will be green
-        startTimer(4,INIT_TIMER_4);
-        stopTimer(1,INIT_TIMER_1)
-        startTimer(1,INIT_TIMER_1);
+        this.props.startTimer(4,INIT_TIMER_4);
+        this.props.stopTimer(1,INIT_TIMER_1)
+        this.props.startTimer(1,INIT_TIMER_1);
         return promise
     })
     .catch((error)=>console.log(error))
@@ -206,7 +196,6 @@ startTrafficLightCycle(){
         render(){
         return(
         <div>
-       <Timer number={this.props.number} handleStartTimer={this.handleStartTimer} handleStopTimer={this.handleStopTimer} />
         <div className="trafficlight" id={`trafficLight${this.props.number}`} >
         <div className="red"></div>
         <div className="yellow"></div>
